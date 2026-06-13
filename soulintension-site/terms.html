@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of use for soulintension.com" />
+  <meta name="robots" content="noindex" />
+  <title>terms of use | soulintension</title>
+  <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff;
+      --heading: #555555;
+      --body: #666666;
+      --light-text: #999999;
+      --border: #e0e0e0;
+      --brand: #7a6e8a;
+      --sans: 'Poppins', system-ui, sans-serif;
+    }
+    body { background: var(--white); color: var(--body); font-family: var(--sans); font-weight: 400; line-height: 1.75; font-size: 16px; }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.75rem 2.5rem;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+    .nav-links a { color: var(--light-text); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: lowercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--heading); }
+    .content { max-width: 720px; margin: 0 auto; padding: 8rem 2rem 6rem; }
+    .page-label { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--body); font-weight: 600; display: block; margin-bottom: 1rem; }
+    h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 600; color: var(--heading); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.5rem; }
+    .last-updated { font-size: 0.82rem; color: var(--light-text); margin-bottom: 3rem; display: block; }
+    h2 { font-size: 1.15rem; font-weight: 600; color: var(--heading); margin: 2.5rem 0 0.75rem; }
+    p { font-size: 1rem; color: var(--body); line-height: 1.85; margin-bottom: 1rem; }
+    ul { margin: 0 0 1rem 1.5rem; }
+    ul li { font-size: 1rem; color: var(--body); line-height: 1.85; margin-bottom: 0.4rem; }
+    a { color: var(--brand); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-color: var(--brand); }
+    .divider { width: 40px; height: 2px; background: var(--border); margin: 3rem 0; }
+    footer { padding: 1.75rem 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .footer-logo { font-size: 0.88rem; color: var(--light-text); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--light-text); text-decoration: none; text-transform: lowercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--heading); }
+    .footer-copy { font-size: 0.73rem; color: #bbb; width: 100%; text-align: center; }
+    @media (max-width: 600px) { nav { padding: 0.75rem 1.5rem; } .nav-links { display: none; } footer { flex-direction: column; text-align: center; } }
+  </style>
+
+  <!-- ACCESSIBILITY: focus styles and keyboard navigation -->
+  <style>
+    /* Visible focus indicator for keyboard navigation */
+    *:focus-visible {
+      outline: 3px solid #7a6e8a;
+      outline-offset: 3px;
+    }
+
+    /* Remove outline for mouse users, keep for keyboard */
+    *:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Ensure sufficient color contrast on links */
+    a:hover { text-decoration: underline; }
+
+    /* High contrast mode support */
+    @media (forced-colors: active) {
+      .btn, button { border: 2px solid ButtonText; }
+      nav { border-bottom: 1px solid ButtonText; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <script>
+    // Hamburger menu keyboard toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var navLinks = document.getElementById('nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          navLinks.style.display = expanded ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#fff';
+          navLinks.style.padding = '1rem 1.5rem';
+          navLinks.style.borderBottom = '1px solid #e0e0e0';
+          navLinks.style.gap = '0.75rem';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;top:-100px;left:0;background:#555555;color:#ffffff;padding:0.75rem 1.5rem;font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:500;z-index:10000;text-decoration:none;border:none;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">skip to main content</a>
+  <a href="#main-content" class="skip-link" style="position:absolute;top:-100px;left:0;background:#555;color:#fff;padding:0.75rem 1.5rem;font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:500;z-index:9999;text-decoration:none;transition:top 0.2s;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">skip to main content</a>
+  <nav>
+    <a href="/" class="nav-logo"><img src="/images/soulintensionlogo.png" alt="soulintension" width="auto" height="46" style="display:block;" /></a>
+    <ul class="nav-links">
+      <li><a href="/community" tabindex="0">community</a></li>
+      <li><a href="/resources" tabindex="0">resources</a></li>
+      <li><a href="/about" tabindex="0">about</a></li>
+      <li><a href="/connect" tabindex="0">connect</a></li>
+    </ul>
+  </nav>
+
+  <div class="content" id="main-content">
+    <span class="page-label">legal</span>
+    <h1>Terms of Use</h1>
+    <span class="last-updated">Last updated: June 2026</span>
+
+    <p>By accessing or using soulintension.com, you agree to these terms. If you do not agree, please do not use this site.</p>
+
+    <h2>About This Site</h2>
+    <p>soulintension is a personal ministry site offering information, community gatherings, and facilitation services related to faith, sexuality, and the Christian life. It is operated by a sole individual based in Sonoma County, California.</p>
+
+    <h2>Use of This Site</h2>
+    <p>You may use this site for personal, non-commercial purposes. You agree not to:</p>
+    <ul>
+      <li>Use the site in any way that violates applicable law</li>
+      <li>Submit false, misleading, or harmful information through any form</li>
+      <li>Attempt to interfere with the site's operation or security</li>
+      <li>Reproduce or distribute site content without permission</li>
+    </ul>
+
+    <h2>Services and Facilitation</h2>
+    <p>soulintension offers one-on-one conversations, educational events, and weekend conferences. Specific terms, pricing, and conditions for paid services will be agreed upon separately before any engagement begins. Nothing on this site constitutes a binding service agreement until explicitly confirmed in writing.</p>
+    <p>soulintension does not provide licensed counseling, therapy, or medical advice. One-on-one conversations are peer support and should not be treated as a substitute for professional mental health or medical care.</p>
+
+    <h2>Community Standards</h2>
+    <p>soulintension community gatherings are Side B spaces. Participants are welcome regardless of where they personally land on questions of faith and sexuality. However, gatherings are not forums for debate about the community's theological foundation. Disruptive behavior or attempts to use community spaces to advocate against the community's stated framework may result in being asked not to return.</p>
+
+    <h2>Intellectual Property</h2>
+    <p>All content on this site, including text, images, and design, is the property of soulintension unless otherwise noted. Images sourced from third parties remain the property of their respective owners. You may share links to this site but may not reproduce substantial content without permission.</p>
+
+    <h2>Limitation of Liability</h2>
+    <p>soulintension is provided in good faith but without warranty of any kind. We are not liable for any damages arising from your use of this site or participation in any soulintension community or event.</p>
+
+    <h2>External Links</h2>
+    <p>This site links to third-party resources including books, organizations, and courses. We are not responsible for the content, accuracy, or practices of external sites.</p>
+
+    <h2>Changes to These Terms</h2>
+    <p>We may update these terms from time to time. The date at the top of this page reflects the most recent revision. Continued use of the site after any changes constitutes acceptance of the updated terms.</p>
+
+    <h2>Governing Law</h2>
+    <p>These terms are governed by the laws of the State of California, without regard to its conflict of law provisions.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about these terms, please reach out through the <a href="/connect">connect page</a>.</p>
+
+    <div class="divider"></div>
+    <p><a href="/privacy">View Privacy Policy</a></p>
+  </div>
+
+  <footer>
+    <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-links">
+      <li><a href="/privacy">privacy</a></li>
+      <li><a href="/terms">terms</a></li>
+      <li><a href="/connect">contact</a></li>
+    </ul>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>

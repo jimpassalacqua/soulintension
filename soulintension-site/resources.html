@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Books, courses, organizations, and events for LGBT Christians and the people who love them." />
+  <title>resources — soulintension</title>
+  <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --heading: #555555;
+      --body: #666666;
+      --light-text: #999999;
+      --border: #e0e0e0;
+      --brand: #7a6e8a;
+      --sans: 'Poppins', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--body);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2.5rem;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--heading); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--heading); }
+
+    /* PAGE HERO */
+    .page-hero {
+      margin-top: 4.5rem;
+      position: relative;
+      width: 100%;
+      min-height: 52vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+    }
+
+    .page-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%);
+    }
+
+    .page-hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 5vw;
+      width: 100%;
+    }
+
+    .page-hero-text .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    .page-hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    /* BUTTONS */
+    .btn {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: lowercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      transition: all 0.2s;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--heading);
+      color: var(--heading);
+      background: transparent;
+    }
+
+    .btn-outline:hover { background: var(--heading); color: var(--white); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 2rem; }
+
+    .section.alt {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-inner.centered { text-align: center; max-width: 680px; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--body);
+      margin-bottom: 0.85rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .section h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      font-size: 1.02rem;
+      color: var(--body);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* RESOURCE LIST */
+    .resource-list {
+      list-style: none;
+      margin-top: 1.75rem;
+    }
+
+    .resource-list li {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .resource-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-list a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--heading);
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.4;
+    }
+
+    .resource-list a:hover { color: var(--brand); }
+
+    .resource-meta {
+      font-size: 0.8rem;
+      color: var(--light-text);
+      letter-spacing: 0.04em;
+      font-weight: 400;
+    }
+
+    .resource-desc {
+      font-size: 0.95rem;
+      color: var(--body);
+      line-height: 1.75;
+      margin-top: 0.15rem;
+    }
+
+    /* SUB LABEL within a section */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+      display: block;
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+    }
+
+    /* IMAGE GRID */
+    .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .image-grid-item { aspect-ratio: 1 / 1; overflow: hidden; }
+
+    .image-grid-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .image-grid-item img:hover { transform: scale(1.03); }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-cta p {
+      color: var(--body);
+      max-width: 440px;
+      margin: 0 auto 2.25rem;
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.75rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo { font-size: 0.88rem; font-weight: 400; color: var(--light-text); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--light-text); text-decoration: none; letter-spacing: 0.05em; text-transform: lowercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--heading); }
+    .footer-copy { font-size: 0.73rem; color: #bbb; width: 100%; text-align: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      nav { padding: 0.75rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 3.75rem 1.5rem; }
+      .image-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .image-grid.cols-2,
+      .image-grid.cols-4 { grid-template-columns: 1fr; }
+      .image-grid-item { aspect-ratio: 4 / 3; }
+      .section { padding: 3rem 1.25rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.soulintension.com/resources" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="resources | soulintension" />
+  <meta property="og:description" content="Books, courses, organizations, and events for LGBT Christians and the people who love them." />
+  <meta property="og:url" content="https://www.soulintension.com/resources" />
+  <meta property="og:image" content="https://www.soulintension.com/images/abstract-curves.webp" />
+  <meta property="og:site_name" content="soulintension" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="resources | soulintension" />
+  <meta name="twitter:description" content="Books, courses, organizations, and events for LGBT Christians and the people who love them." />
+  <meta name="twitter:image" content="https://www.soulintension.com/images/abstract-curves.webp" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "resources | soulintension",
+    "description": "Books, courses, organizations, and events for LGBT Christians and the people who love them.",
+    "url": "https://www.soulintension.com/resources",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "soulintension",
+      "url": "https://www.soulintension.com"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics (loads only after cookie consent) -->
+  <script>
+    function loadAnalytics() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C060XD6BBF';
+      s.async = true;
+      document.head.appendChild(s);
+      s.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C060XD6BBF', {anonymize_ip: true});
+      };
+    }
+    if (localStorage.getItem('si_cookies') === 'accepted') { loadAnalytics(); }
+  </script>
+
+  <!-- ACCESSIBILITY: focus styles and keyboard navigation -->
+  <style>
+    /* Visible focus indicator for keyboard navigation */
+    *:focus-visible {
+      outline: 3px solid #7a6e8a;
+      outline-offset: 3px;
+    }
+
+    /* Remove outline for mouse users, keep for keyboard */
+    *:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Ensure sufficient color contrast on links */
+    a:hover { text-decoration: underline; }
+
+    /* High contrast mode support */
+    @media (forced-colors: active) {
+      .btn, button { border: 2px solid ButtonText; }
+      nav { border-bottom: 1px solid ButtonText; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <script>
+    // Hamburger menu keyboard toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var navLinks = document.getElementById('nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          navLinks.style.display = expanded ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#fff';
+          navLinks.style.padding = '1rem 1.5rem';
+          navLinks.style.borderBottom = '1px solid #e0e0e0';
+          navLinks.style.gap = '0.75rem';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;top:-100px;left:0;background:#555555;color:#ffffff;padding:0.75rem 1.5rem;font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:500;z-index:10000;text-decoration:none;border:none;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">skip to main content</a>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:999; background:#ffffff; border-top:1px solid #e0e0e0; padding:1.25rem 2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.85rem; color:#666;">
+    <p style="margin:0; max-width:600px; line-height:1.6;">We use cookies to understand how visitors use this site. No personal data is sold or shared. <a href="/privacy" style="color:#7a6e8a; text-decoration:none; border-bottom:1px solid #c4bcd4;">Privacy Policy</a></p>
+    <div style="display:flex; gap:0.75rem; flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#555555; color:#fff; border:none; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">accept</button>
+      <button onclick="declineCookies()" style="background:transparent; color:#666; border:1px solid #e0e0e0; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">decline</button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('si_cookies');
+      if (!consent) { document.getElementById('cookie-banner').style.display = 'flex'; }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('si_cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadAnalytics();
+    }
+    function declineCookies() {
+      localStorage.setItem('si_cookies', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">
+      <img src="/images/soulintensionlogo.png" alt="soulintension" width="auto" height="46" style="display:block;" />
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/community" tabindex="0">community</a></li>
+      <li><a href="/resources" class="active">resources</a></li>
+      <li><a href="/about" tabindex="0">about</a></li>
+      <li><a href="/connect" tabindex="0">connect</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" type="button">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO: colorful abstract as background -->
+  <div class="page-hero" id="main-content" role="main">
+    <div class="page-hero-bg" style="background-image: url('/images/abstract-curves.webp');"></div>
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-text">
+      <span class="eyebrow">tools for the journey</span>
+      <h1>resources</h1>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="section-inner centered">
+      <span class="section-label">thoughtfully gathered</span>
+      <h2>For LGBT Christians and the people who love them</h2>
+      <p>These resources represent some of the most honest, substantive thinking available on faith and sexuality. They range from deeply personal to scholarly. Start wherever feels right.</p>
+    </div>
+  </section>
+
+  <!-- COLORFUL IMAGE GRID: 4 across -->
+  <div class="image-grid cols-4">
+    <div class="image-grid-item">
+      <img src="/images/abstract-cubes.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract-lines.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract-neon-lines.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+  </div>
+
+  <!-- MEETINGS -->
+  <section class="section alt" id="meetings">
+    <div class="section-inner">
+      <span class="section-label">meetings</span>
+      <h2>Community gatherings</h2>
+      <p class="section-intro">Regular gatherings for LGBT Christians and allies to connect in person.</p>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.revoice.org/locations/santarosa" target="_blank" rel="noopener"><i>Revoice</i> Santa Rosa Chapter</a>
+          <span class="resource-meta">Monthly / Sonoma County, CA</span>
+          <span class="resource-desc">A local chapter of the <i>Revoice</i> community for LGBT Christians and allies. Reach out through the connect page for details on the next gathering.</span>
+        </li>
+        <li>
+          <a href="https://revoice.org" target="_blank" rel="noopener"><i>Revoice</i> National Community</a>
+          <span class="resource-meta">revoice.org</span>
+          <span class="resource-desc">An organization supporting, encouraging, and empowering gay, lesbian, bisexual, and other sexual minority Christians to live faithfully.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="section" id="courses">
+    <div class="section-inner">
+      <span class="section-label">courses</span>
+      <h2>Learning and formation</h2>
+      <p class="section-intro">Online courses for individuals, parents, and church leaders seeking a more educated and empathetic understanding.</p>
+      <ul class="resource-list">
+        <li>
+          <a href="https://ondemand.centerforfaith.com/courses/grace-truth" target="_blank" rel="noopener">Grace and Truth</a>
+          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i></span>
+          <span class="resource-desc">One of the best curricula available for church leaders and allies who want to serve LGBT people and their families with both theological faithfulness and genuine love.</span>
+        </li>
+        <li>
+          <a href="https://ondemand.centerforfaith.com/courses/journeys-of-faith" target="_blank" rel="noopener">Journeys of Faith</a>
+          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for LGBT individuals</span>
+          <span class="resource-desc">Designed specifically for LGBT Christians. Personal stories from people navigating faith and sexuality, offering a powerful and honest entry point for the journey.</span>
+        </li>
+        <li>
+          <a href="https://ondemand.centerforfaith.com/courses/parenting-lgbtq-kids" target="_blank" rel="noopener">Parenting LGBTQ Kids</a>
+          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for parents</span>
+          <span class="resource-desc">Practical and pastoral guidance for Christian parents trying to hold their faith and their relationship with their child together.</span>
+        </li>
+        <li>
+          <a href="https://ondemand.centerforfaith.com/courses/parenting-lgbtq-kids" target="_blank" rel="noopener">Parenting LGBTQ Kids Cohort</a>
+          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for parents / live online via Zoom</span>
+          <span class="resource-desc">A 13-week live cohort where parents of LGBT kids go through the Parenting LGBTQ Kids course together in real time via Zoom, guided by other parents who've walked the same road.</span>
+        </li>
+        <li>
+          <a href="https://ondemand.centerforfaith.com/courses/digital-leaders-forum" target="_blank" rel="noopener">Leaders Forum</a>
+          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i></span>
+          <span class="resource-desc">For church leaders who want to think deeply and lead well on questions of faith and sexuality.</span>
+        </li>
+        <li>
+          <a href="https://christian-sexuality.com" target="_blank" rel="noopener">Christian Sexuality</a>
+          <span class="resource-meta">christian-sexuality.com / for teens and young adults</span>
+          <span class="resource-desc">A course on a biblical theology of sexuality designed specifically for teens and young adults, suitable for individuals or small groups.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COLORFUL IMAGE GRID: 2 across mid-page -->
+  <div class="image-grid cols-2">
+    <div class="image-grid-item">
+      <img src="/images/abstract-neon-lines.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+  </div>
+
+  <!-- MEDIA / ORGANIZATIONS -->
+  <section class="section alt" id="media">
+    <div class="section-inner">
+      <span class="section-label">organizations and media</span>
+      <h2>Voices worth hearing</h2>
+      <p class="section-intro">Websites, podcasts, and organizations doing faithful work in this space.</p>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.centerforfaith.com" target="_blank" rel="noopener"><i>Center for Faith, Sexuality and Gender</i></a>
+          <span class="resource-meta">centerforfaith.com / website and courses</span>
+          <span class="resource-desc">Research, resources, and training for churches and individuals navigating questions of faith and sexuality with theological faithfulness and genuine love.</span>
+        </li>
+        <li>
+          <a href="https://revoice.org" target="_blank" rel="noopener"><i>Revoice</i></a>
+          <span class="resource-meta">revoice.org / website and conference</span>
+          <span class="resource-desc">Supporting, encouraging, and empowering gay, lesbian, bisexual, and other sexual minority Christians. Annual conference and ongoing community resources.</span>
+        </li>
+        <li>
+          <a href="https://postureshift.com" target="_blank" rel="noopener"><i>Posture Shift</i></a>
+          <span class="resource-meta">postureshift.com / website</span>
+          <span class="resource-desc">Training and resources to help churches and individuals develop a more loving, informed posture toward LGBT people and their families.</span>
+        </li>
+        <li>
+          <a href="https://www.livingout.org" target="_blank" rel="noopener"><i>Living Out</i></a>
+          <span class="resource-meta">livingout.org / website and podcast</span>
+          <span class="resource-desc">Stories, resources, and guidance from gay Christians living faithfully. Particularly helpful for individuals and churches wanting real-world perspectives.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- BOOKS -->
+  <section class="section" id="books">
+    <div class="section-inner">
+      <span class="section-label">books</span>
+      <h2>Reading worth your time</h2>
+      <p class="section-intro">These titles have shaped how I think and how I show up. Start wherever feels closest to where you are.</p>
+
+      <span class="sub-label">for LGBT individuals</span>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.amazon.com/dp/0310534194" target="_blank" rel="noopener">Washed and Waiting</a>
+          <span class="resource-meta">Wesley Hill</span>
+          <span class="resource-desc">One of the most honest and beautifully written accounts of what it means to be gay and hold a traditional Christian sexual ethic. A cornerstone text.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/0310538106" target="_blank" rel="noopener">A War of Loves</a>
+          <span class="resource-meta">David Bennett</span>
+          <span class="resource-desc">A compelling personal story of conversion and what it means to hold gay identity and Christian faith together.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/0830845127" target="_blank" rel="noopener">Single, Gay, Christian</a>
+          <span class="resource-meta">Gregory Coles</span>
+          <span class="resource-desc">A personal and honest account of navigating gay identity and Christian faith with grace and clarity.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/1587433494" target="_blank" rel="noopener">Spiritual Friendship</a>
+          <span class="resource-meta">Wesley Hill</span>
+          <span class="resource-desc">A recovery of the Christian tradition of deep friendship as a site of genuine love and belonging. Essential reading for anyone thinking about celibate vocation.</span>
+        </li>
+        <li>
+          <a href="https://a.co/d/0ua69iv" target="_blank" rel="noopener">Born Again This Way</a>
+          <span class="resource-meta">Rachel Gilson</span>
+          <span class="resource-desc">A warm and accessible account of coming to faith as a gay woman and finding a life that's genuinely full.</span>
+        </li>
+      </ul>
+
+      <span class="sub-label">for parents and families</span>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.amazon.com/dp/1631466194" target="_blank" rel="noopener">Us vs. Us</a>
+          <span class="resource-meta">Andrew Marin</span>
+          <span class="resource-desc">The untold story of religion and the LGBT community, based on years of research. Challenges assumptions on all sides.</span>
+        </li>
+        <li>
+          <a href="https://a.co/d/feCNDYv" target="_blank" rel="noopener">Messy Grace</a>
+          <span class="resource-meta">Caleb Kaltenbach</span>
+          <span class="resource-desc">A pastor raised by gay parents reflects on how to love LGBT people without compromising conviction.</span>
+        </li>
+        <li>
+          <a href="https://a.co/d/gucUz9x" target="_blank" rel="noopener">Love Is an Orientation</a>
+          <span class="resource-meta">Andrew Marin</span>
+          <span class="resource-desc">Practical guidance for Christians who want to build bridges with the LGBT community without abandoning their faith.</span>
+        </li>
+      </ul>
+
+      <span class="sub-label">for church leaders and allies</span>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.amazon.com/dp/0310519659" target="_blank" rel="noopener">People to Be Loved</a>
+          <span class="resource-meta">Preston Sprinkle</span>
+          <span class="resource-desc">Reframes the entire conversation around people rather than positions. Probably the most important book for church leaders to read first.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/0310140935" target="_blank" rel="noopener">Still Time to Care</a>
+          <span class="resource-meta">Greg Johnson</span>
+          <span class="resource-desc">A call for the church to recover its historic care for people with same-sex attraction, rooted in classical Christian theology.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/0525654275" target="_blank" rel="noopener">Messy Truth</a>
+          <span class="resource-meta">Caleb Kaltenbach</span>
+          <span class="resource-desc">How to foster community without sacrificing conviction. Practical and pastoral.</span>
+        </li>
+        <li>
+          <a href="https://www.amazon.com/dp/0830781226" target="_blank" rel="noopener">Embodied</a>
+          <span class="resource-meta">Preston Sprinkle</span>
+          <span class="resource-desc">A compassionate, well-researched look at transgender identities and the church.</span>
+        </li>
+        <li>
+          <a href="https://a.co/d/ijl5zuA" target="_blank" rel="noopener">Does the Bible Support Same-Sex Marriage?</a>
+          <span class="resource-meta">Preston Sprinkle</span>
+          <span class="resource-desc">A fair, thorough engagement with the strongest arguments on both sides. Essential for anyone who wants to understand the theological landscape.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EVENTS -->
+  <section class="section alt" id="events">
+    <div class="section-inner">
+      <span class="section-label">events</span>
+      <h2>Gather in person</h2>
+      <p class="section-intro">Conferences and gatherings where LGBT Christians and allies can connect beyond the screen.</p>
+      <ul class="resource-list">
+        <li>
+          <a href="https://www.revoice.org/r26" target="_blank" rel="noopener"><i>Revoice</i> 2026 Conference</a>
+          <span class="resource-meta">Annual / location varies</span>
+          <span class="resource-desc">The largest annual gathering of Side B Christians and allies. A genuinely formative experience for anyone who has felt alone in this conversation.</span>
+        </li>
+        <li>
+          <a href="https://www.centerforfaith.com/events" target="_blank" rel="noopener"><i>Center for Faith, Sexuality and Gender</i> Events</a>
+          <span class="resource-meta">Various / centerforfaith.com/events</span>
+          <span class="resource-desc">Webinars, workshops, and training events for individuals, churches, and ministry leaders throughout the year.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <span class="section-label">something missing?</span>
+    <h2>Know a resource<br />that should be here?</h2>
+    <p>This list is always evolving. If you know of a book, organization, or resource that belongs here, I'd love to hear about it.</p>
+    <a href="/connect" class="btn btn-outline">get in touch</a>
+  </div>
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-links">
+      <li><a href="/privacy">privacy</a></li>
+      <li><a href="/terms">terms</a></li>
+      <li><a href="/connect">contact</a></li>
+    </ul>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

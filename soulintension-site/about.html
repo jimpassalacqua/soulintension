@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="soulintension exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy." />
+  <title>about — soulintension</title>
+  <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --heading: #555555;
+      --body: #666666;
+      --light-text: #999999;
+      --border: #e0e0e0;
+      --brand: #7a6e8a;
+      --sans: 'Poppins', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--body);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2.5rem;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--heading); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--heading); }
+
+    /* PAGE HERO - hand in rain image, text bottom left */
+    .page-hero {
+      margin-top: 4.5rem;
+      position: relative;
+      width: 100%;
+      min-height: 52vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: grayscale(100%) brightness(0.5);
+    }
+
+    .page-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%);
+    }
+
+    .page-hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 5vw;
+      width: 100%;
+    }
+
+    .page-hero-text .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.75rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    .page-hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    /* BUTTONS */
+    .btn {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: lowercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      transition: all 0.2s;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--heading);
+      color: var(--heading);
+      background: transparent;
+    }
+
+    .btn-outline:hover { background: var(--heading); color: var(--white); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 2rem; }
+
+    .section.alt {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner { max-width: 680px; margin: 0 auto; }
+    .section-inner.centered { text-align: center; }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--body);
+      margin-bottom: 0.85rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .section h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      font-size: 1.02rem;
+      color: var(--body);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin: 2.5rem 0;
+    }
+
+    /* SCRIPTURE */
+    .scripture {
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--light-text);
+      line-height: 1.75;
+      border-left: 3px solid var(--border);
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .scripture cite {
+      display: block;
+      font-size: 0.8rem;
+      font-style: normal;
+      margin-top: 0.5rem;
+      color: var(--light-text);
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    .brand { color: var(--brand); font-weight: 500; }
+
+    /* IMAGE GRID - collage */
+    .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .image-grid-item { aspect-ratio: 1 / 1; overflow: hidden; }
+
+    .image-grid-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .image-grid-item img:hover { transform: scale(1.03); }
+    .image-grid-item img.bw { filter: grayscale(100%); }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-cta p {
+      color: var(--body);
+      max-width: 440px;
+      margin: 0 auto 2.25rem;
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 1.75rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo { font-size: 0.88rem; font-weight: 400; color: var(--light-text); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--light-text); text-decoration: none; letter-spacing: 0.05em; text-transform: lowercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--heading); }
+    .footer-copy { font-size: 0.73rem; color: #bbb; width: 100%; text-align: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      nav { padding: 0.75rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 3.75rem 1.5rem; }
+      .image-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .image-grid.cols-3 { grid-template-columns: 1fr; }
+      .image-grid-item { aspect-ratio: 4 / 3; }
+      .section { padding: 3rem 1.25rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.soulintension.com/about" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="my story | soulintension" />
+  <meta property="og:description" content="soulintension exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy." />
+  <meta property="og:url" content="https://www.soulintension.com/about" />
+  <meta property="og:image" content="https://www.soulintension.com/images/hand-rain.webp" />
+  <meta property="og:site_name" content="soulintension" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="my story | soulintension" />
+  <meta name="twitter:description" content="soulintension exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy." />
+  <meta name="twitter:image" content="https://www.soulintension.com/images/hand-rain.webp" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "my story | soulintension",
+    "description": "soulintension exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy.",
+    "url": "https://www.soulintension.com/about",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "soulintension",
+      "url": "https://www.soulintension.com"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics (loads only after cookie consent) -->
+  <script>
+    function loadAnalytics() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C060XD6BBF';
+      s.async = true;
+      document.head.appendChild(s);
+      s.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C060XD6BBF', {anonymize_ip: true});
+      };
+    }
+    if (localStorage.getItem('si_cookies') === 'accepted') { loadAnalytics(); }
+  </script>
+
+  <!-- ACCESSIBILITY: focus styles and keyboard navigation -->
+  <style>
+    /* Visible focus indicator for keyboard navigation */
+    *:focus-visible {
+      outline: 3px solid #7a6e8a;
+      outline-offset: 3px;
+    }
+
+    /* Remove outline for mouse users, keep for keyboard */
+    *:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Ensure sufficient color contrast on links */
+    a:hover { text-decoration: underline; }
+
+    /* High contrast mode support */
+    @media (forced-colors: active) {
+      .btn, button { border: 2px solid ButtonText; }
+      nav { border-bottom: 1px solid ButtonText; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <script>
+    // Hamburger menu keyboard toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var navLinks = document.getElementById('nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          navLinks.style.display = expanded ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#fff';
+          navLinks.style.padding = '1rem 1.5rem';
+          navLinks.style.borderBottom = '1px solid #e0e0e0';
+          navLinks.style.gap = '0.75rem';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;top:-100px;left:0;background:#555555;color:#ffffff;padding:0.75rem 1.5rem;font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:500;z-index:10000;text-decoration:none;border:none;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">skip to main content</a>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:999; background:#ffffff; border-top:1px solid #e0e0e0; padding:1.25rem 2rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.85rem; color:#666;">
+    <p style="margin:0; max-width:600px; line-height:1.6;">We use cookies to understand how visitors use this site. No personal data is sold or shared. <a href="/privacy" style="color:#7a6e8a; text-decoration:none; border-bottom:1px solid #c4bcd4;">Privacy Policy</a></p>
+    <div style="display:flex; gap:0.75rem; flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#555555; color:#fff; border:none; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">accept</button>
+      <button onclick="declineCookies()" style="background:transparent; color:#666; border:1px solid #e0e0e0; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">decline</button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('si_cookies');
+      if (!consent) { document.getElementById('cookie-banner').style.display = 'flex'; }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('si_cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadAnalytics();
+    }
+    function declineCookies() {
+      localStorage.setItem('si_cookies', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">
+      <img src="/images/soulintensionlogo.png" alt="soulintension" width="auto" height="46" style="display:block;" />
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/community" tabindex="0">community</a></li>
+      <li><a href="/resources" tabindex="0">resources</a></li>
+      <li><a href="/about" class="active">about</a></li>
+      <li><a href="/connect" tabindex="0">connect</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" type="button">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO: hand in rain, B&W, text bottom left -->
+  <div class="page-hero" id="main-content" role="main">
+    <div class="page-hero-bg" style="background-image: url('/images/hand-rain.webp');"></div>
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-text">
+      <span class="eyebrow">my story</span>
+      <h1>about</h1>
+    </div>
+  </div>
+
+  <!-- MAIN ABOUT COPY -->
+  <section class="section">
+    <div class="section-inner">
+      <p>Maybe you've been carrying something for a long time. A faith you can't let go of, and a sexuality that doesn't fit neatly into the answers your church gave you. Maybe you've felt like you had to choose between the two, or that there simply wasn't a place for someone like you.</p>
+      <p>You're not alone in that.</p>
+      <p>I'm a follower of Jesus, and I'm also someone who knows firsthand what it's like to sit with questions that don't have easy answers. Questions about identity, belonging, desire, and what it means to walk with God when the path isn't clearly marked.</p>
+      <p><span class="brand">soulintension</span> exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy. A place where faith and honest questions can sit in the same room together.</p>
+      <p>This isn't a space that will tell you your sexuality makes you less loved by God. It's also not a space that'll hand you simple answers or pretend the hard questions aren't real. What it is, what I'm genuinely trying to offer, is honest conversation, real resources, and the kind of presence that makes a difficult road feel less lonely.</p>
+      <p>If you're gay, lesbian, bisexual, or questioning, and you're somewhere in the middle of figuring out what faith means for your life, I'd love to hear your story. No agenda. No pressure. Just a conversation.</p>
+      <p>Reach out. I'll listen.</p>
+
+      <div class="divider"></div>
+
+      <blockquote class="scripture">
+        Praise be to the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort, who comforts us in all our troubles, so that we can comfort those in any trouble with the comfort we ourselves receive from God.
+        <cite>2 Corinthians 1:3-4</cite>
+      </blockquote>
+
+      <div class="divider"></div>
+
+      <span class="section-label">a note on where I'm coming from</span>
+      <p>I hold a traditional Christian view of sexual ethics, but I want to be upfront that this space isn't about convincing you of anything. I believe in the dignity and full humanity of every LGBT person, and I believe genuine trust has to come before any theological conversation. If you're curious about my perspective, I'm happy to share it. But it's never a condition of being here.</p>
+
+      <br />
+      <a href="/connect" class="btn btn-outline">let's talk</a>
+    </div>
+  </section>
+
+  <!-- COLLAGE: 6 images, 3 across, 2 rows, all B&W -->
+  <div class="image-grid cols-3">
+    <div class="image-grid-item">
+      <img class="bw" src="/images/sculpture.webp" alt="Abstract metallic sculpture" />
+    </div>
+    <div class="image-grid-item">
+      <img class="bw" src="/images/boy-microphone.webp" alt="A young boy shouting into a microphone" />
+    </div>
+    <div class="image-grid-item">
+      <img class="bw" src="/images/neon-cross.webp" alt="A person in front of a neon cross" />
+    </div>
+    <div class="image-grid-item">
+      <img class="bw" src="/images/bearded-man.webp" alt="A man with a beard covering one eye" />
+    </div>
+    <div class="image-grid-item">
+      <img class="bw" src="/images/butterfly.webp" alt="Close-up of a butterfly on a flower" />
+    </div>
+    <div class="image-grid-item">
+      <img class="bw" src="/images/window-man.webp" alt="A person sitting at a window" />
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <span class="section-label">you don't have to figure this out alone</span>
+    <h2>Reach out.<br />I'll listen.</h2>
+    <p>No agenda. No pressure. Just a conversation with someone who's been carrying this for a long time and knows what it costs.</p>
+    <a href="/connect" class="btn btn-outline">start a conversation</a>
+  </div>
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-links">
+      <li><a href="/privacy">privacy</a></li>
+      <li><a href="/terms">terms</a></li>
+      <li><a href="/connect">contact</a></li>
+    </ul>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
