@@ -19,6 +19,8 @@
       --light-text: #999999;
       --border: #e0e0e0;
       --brand: #7a6e8a;
+      --link: #8b7aaa;
+      --link-border: #c4b8d8;
       --sans: 'Poppins', system-ui, sans-serif;
     }
 
@@ -205,13 +207,13 @@
     .resource-list a {
       font-size: 1rem;
       font-weight: 500;
-      color: var(--heading);
+      color: #8b7aaa;
       text-decoration: none;
       transition: color 0.2s;
       line-height: 1.4;
     }
 
-    .resource-list a:hover { color: var(--brand); }
+    .resource-list a:hover { color: #5a4a7a; }
 
     .resource-meta {
       font-size: 0.8rem;
@@ -278,6 +280,26 @@
       line-height: 1.85;
     }
 
+
+    /* FOOTER NAV LINKS */
+    .footer-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.78rem;
+      color: var(--light-text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav-links a:hover { color: var(--heading); }
+
     /* FOOTER */
     footer {
       padding: 1.75rem 2.5rem;
@@ -305,9 +327,9 @@
     }
 
     @media (max-width: 540px) {
-      .image-grid.cols-2,
-      .image-grid.cols-4 { grid-template-columns: 1fr; }
-      .image-grid-item { aspect-ratio: 4 / 3; }
+      .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+      .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .image-grid-item { aspect-ratio: 1 / 1; }
       .section { padding: 3rem 1.25rem; }
       footer { flex-direction: column; text-align: center; }
     }
@@ -525,33 +547,34 @@
       <ul class="resource-list">
         <li>
           <a href="https://ondemand.centerforfaith.com/courses/grace-truth" target="_blank" rel="noopener">Grace and Truth</a>
-          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i></span>
+          <span class="resource-meta"><i>The Center for Faith, Sexuality and Gender</i></span>
           <span class="resource-desc">One of the best curricula available for church leaders and allies who want to serve LGBT people and their families with both theological faithfulness and genuine love.</span>
         </li>
         <li>
           <a href="https://ondemand.centerforfaith.com/courses/journeys-of-faith" target="_blank" rel="noopener">Journeys of Faith</a>
-          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for LGBT individuals</span>
+          <span class="resource-meta"><i>The Center for Faith, Sexuality and Gender</i> / for LGBT individuals</span>
           <span class="resource-desc">Designed specifically for LGBT Christians. Personal stories from people navigating faith and sexuality, offering a powerful and honest entry point for the journey.</span>
         </li>
         <li>
           <a href="https://ondemand.centerforfaith.com/courses/parenting-lgbtq-kids" target="_blank" rel="noopener">Parenting LGBTQ Kids</a>
-          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for parents</span>
+          <span class="resource-meta"><i>The Center for Faith, Sexuality and Gender</i> / for parents</span>
           <span class="resource-desc">Practical and pastoral guidance for Christian parents trying to hold their faith and their relationship with their child together.</span>
         </li>
         <li>
           <a href="https://ondemand.centerforfaith.com/courses/parenting-lgbtq-kids" target="_blank" rel="noopener">Parenting LGBTQ Kids Cohort</a>
-          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i> / for parents / live online via Zoom</span>
+          <span class="resource-meta"><i>The Center for Faith, Sexuality and Gender</i> / for parents / live online via Zoom</span>
           <span class="resource-desc">A 13-week live cohort where parents of LGBT kids go through the Parenting LGBTQ Kids course together in real time via Zoom, guided by other parents who've walked the same road.</span>
+          <a href="/connect" class="text-link" style="margin-top: 0.5rem;">contact for details and schedule</a>
         </li>
         <li>
           <a href="https://ondemand.centerforfaith.com/courses/digital-leaders-forum" target="_blank" rel="noopener">Leaders Forum</a>
-          <span class="resource-meta"><i>Center for Faith, Sexuality and Gender</i></span>
+          <span class="resource-meta"><i>The Center for Faith, Sexuality and Gender</i></span>
           <span class="resource-desc">For church leaders who want to think deeply and lead well on questions of faith and sexuality.</span>
         </li>
         <li>
           <a href="https://christian-sexuality.com" target="_blank" rel="noopener">Christian Sexuality</a>
           <span class="resource-meta">christian-sexuality.com / for teens and young adults</span>
-          <span class="resource-desc">A course on a biblical theology of sexuality designed specifically for teens and young adults, suitable for individuals or small groups.</span>
+          <span class="resource-desc">A course on a biblical theology of sexuality designed specifically for teens and young adults, suitable for individuals or groups.</span>
         </li>
       </ul>
     </div>
@@ -575,7 +598,7 @@
       <p class="section-intro">Websites, podcasts, and organizations doing faithful work in this space.</p>
       <ul class="resource-list">
         <li>
-          <a href="https://www.centerforfaith.com" target="_blank" rel="noopener"><i>Center for Faith, Sexuality and Gender</i></a>
+          <a href="https://www.centerforfaith.com" target="_blank" rel="noopener"><i>The Center for Faith, Sexuality and Gender</i></a>
           <span class="resource-meta">centerforfaith.com / website and courses</span>
           <span class="resource-desc">Research, resources, and training for churches and individuals navigating questions of faith and sexuality with theological faithfulness and genuine love.</span>
         </li>
@@ -605,6 +628,12 @@
       <h2>Reading worth your time</h2>
       <p class="section-intro">These titles have shaped how I think and how I show up. Start wherever feels closest to where you are.</p>
 
+        <li>
+          <a href="https://www.amazon.com/dp/1631466194" target="_blank" rel="noopener">Us vs. Us</a>
+          <span class="resource-meta">Andrew Marin</span>
+          <span class="resource-desc">An essential read for anyone in this conversation. Based on years of research, this book upends assumptions on all sides and reframes how Christians and LGBT people actually relate to one another. Start here.</span>
+        </li>
+
       <span class="sub-label">for LGBT individuals</span>
       <ul class="resource-list">
         <li>
@@ -623,11 +652,6 @@
           <span class="resource-desc">A personal and honest account of navigating gay identity and Christian faith with grace and clarity.</span>
         </li>
         <li>
-          <a href="https://www.amazon.com/dp/1587433494" target="_blank" rel="noopener">Spiritual Friendship</a>
-          <span class="resource-meta">Wesley Hill</span>
-          <span class="resource-desc">A recovery of the Christian tradition of deep friendship as a site of genuine love and belonging. Essential reading for anyone thinking about celibate vocation.</span>
-        </li>
-        <li>
           <a href="https://a.co/d/0ua69iv" target="_blank" rel="noopener">Born Again This Way</a>
           <span class="resource-meta">Rachel Gilson</span>
           <span class="resource-desc">A warm and accessible account of coming to faith as a gay woman and finding a life that's genuinely full.</span>
@@ -636,11 +660,7 @@
 
       <span class="sub-label">for parents and families</span>
       <ul class="resource-list">
-        <li>
-          <a href="https://www.amazon.com/dp/1631466194" target="_blank" rel="noopener">Us vs. Us</a>
-          <span class="resource-meta">Andrew Marin</span>
-          <span class="resource-desc">The untold story of religion and the LGBT community, based on years of research. Challenges assumptions on all sides.</span>
-        </li>
+
         <li>
           <a href="https://a.co/d/feCNDYv" target="_blank" rel="noopener">Messy Grace</a>
           <span class="resource-meta">Caleb Kaltenbach</span>
@@ -658,7 +678,7 @@
         <li>
           <a href="https://www.amazon.com/dp/0310519659" target="_blank" rel="noopener">People to Be Loved</a>
           <span class="resource-meta">Preston Sprinkle</span>
-          <span class="resource-desc">Reframes the entire conversation around people rather than positions. Probably the most important book for church leaders to read first.</span>
+          <span class="resource-desc">Reframes the entire conversation around people rather than positions. A strong starting point for church leaders and anyone wanting to engage this topic with more compassion and depth.</span>
         </li>
         <li>
           <a href="https://www.amazon.com/dp/0310140935" target="_blank" rel="noopener">Still Time to Care</a>
@@ -692,12 +712,12 @@
       <p class="section-intro">Conferences and gatherings where LGBT Christians and allies can connect beyond the screen.</p>
       <ul class="resource-list">
         <li>
-          <a href="https://www.revoice.org/r26" target="_blank" rel="noopener"><i>Revoice</i> 2026 Conference</a>
+          <a href="https://www.revoice.org" target="_blank" rel="noopener"><i>Revoice</i> Annual Conference</a>
           <span class="resource-meta">Annual / location varies</span>
-          <span class="resource-desc">The largest annual gathering of Side B Christians and allies. A genuinely formative experience for anyone who has felt alone in this conversation.</span>
+          <span class="resource-desc">The largest annual gathering of Side B Christians and allies. A genuinely formative experience for anyone who has felt alone in this conversation. The 2026 conference has concluded. Watch for 2027 information at revoice.org.</span>
         </li>
         <li>
-          <a href="https://www.centerforfaith.com/events" target="_blank" rel="noopener"><i>Center for Faith, Sexuality and Gender</i> Events</a>
+          <a href="https://www.centerforfaith.com/events" target="_blank" rel="noopener"><i>The Center for Faith, Sexuality and Gender</i> Events</a>
           <span class="resource-meta">Various / centerforfaith.com/events</span>
           <span class="resource-desc">Webinars, workshops, and training events for individuals, churches, and ministry leaders throughout the year.</span>
         </li>
@@ -715,12 +735,18 @@
 
   <footer role="contentinfo" aria-label="Site footer">
     <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-nav-links">
+      <li><a href="/community">community</a></li>
+      <li><a href="/resources">resources</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/connect">connect</a></li>
+    </ul>
     <ul class="footer-links">
       <li><a href="/privacy">privacy</a></li>
       <li><a href="/terms">terms</a></li>
       <li><a href="/connect">contact</a></li>
     </ul>
-    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved. Soulintension is a 501(c)(3) nonprofit organization.</p>
   </footer>
 
 </body>

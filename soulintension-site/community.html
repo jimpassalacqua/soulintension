@@ -19,6 +19,8 @@
       --light-text: #999999;
       --border: #e0e0e0;
       --brand: #7a6e8a;
+      --link: #8b7aaa;
+      --link-border: #c4b8d8;
       --sans: 'Poppins', system-ui, sans-serif;
     }
 
@@ -332,6 +334,26 @@
       line-height: 1.85;
     }
 
+
+    /* FOOTER NAV LINKS */
+    .footer-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.78rem;
+      color: var(--light-text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav-links a:hover { color: var(--heading); }
+
     /* FOOTER */
     footer {
       padding: 1.75rem 2.5rem;
@@ -361,9 +383,9 @@
     }
 
     @media (max-width: 540px) {
-      .image-grid.cols-2,
-      .image-grid.cols-3 { grid-template-columns: 1fr; }
-      .image-grid-item { aspect-ratio: 4 / 3; }
+      .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .image-grid-item { aspect-ratio: 1 / 1; }
       .section { padding: 3rem 1.25rem; }
       footer { flex-direction: column; text-align: center; }
     }
@@ -536,7 +558,7 @@
       <span class="section-label">who this is for</span>
       <h2>Some people have a church. Some people used to.</h2>
       <p>Some are trying to figure out if they ever will again.</p>
-      <p><span class="brand">soulintension</span> community exists for people who need a place in between. A mid-week gathering where LGBT individuals, straight allies, and anyone who has found themselves on the edges of church life can come together honestly.</p>
+      <p><span class="brand">Soulintension</span> community exists for people who need a place in between. A mid-week gathering for LGBT individuals, straight allies, and those who have an LGBT person in their life and want to understand and love them well.</p>
       <p>You don't have to have your theology figured out. You don't have to be on any particular side of anything. Just show up as you are.</p>
     </div>
   </section>
@@ -556,7 +578,7 @@
     <div class="section-inner wide">
       <span class="section-label">gathering details</span>
       <h2>Mid-week. Sonoma County.</h2>
-      <p>If you've got a church you love, come anyway. If you don't have a church, or you're not sure church is even possible for you anymore, this might be a place to start. We meet mid-week so you can attend both.</p>
+      <p>If you've got a church you love, come anyway. If you don't have a church, or you're not sure church is even possible for you anymore, this might be a place to start. We meet mid-week so you can attend both gatherings.</p>
       <div class="detail-grid">
         <div class="detail-item">
           <strong>when</strong>
@@ -594,9 +616,9 @@
           <p>If you've got an LGBT person in your life and want to understand their experience more deeply, or if you simply want to be a more educated and empathetic presence, this community is for you too.</p>
         </div>
         <div class="col-item">
-          <span class="col-label">the church-adjacent</span>
-          <h3>Anyone on the edges</h3>
-          <p>If you've been hurt by church, or you don't quite fit in the communities available to you, there's a seat at this table.</p>
+          <span class="col-label">friends and family</span>
+          <h3>Those who love someone LGBT</h3>
+          <p>If you have an LGBT person in your life and want to understand their experience and love them well, this community is for you too.</p>
         </div>
       </div>
     </div>
@@ -608,7 +630,7 @@
     <div class="section-inner">
       <span class="section-label">our theological home</span>
       <h2>Rooted, but not rigid</h2>
-      <p><span class="brand">soulintension</span> is a Side B community. That means we hold a traditional Christian sexual ethic while fully affirming the dignity, humanity, and belonging of every LGBT person. Nobody walks in the door required to hold that view. Questions are genuinely welcome, and so is respectful uncertainty.</p>
+      <p><span class="brand">Soulintension</span> is a Side B community. That means we hold a traditional Christian sexual ethic while fully affirming the dignity, humanity, and belonging of every LGBT person. Nobody walks in the door required to hold that view. Questions are genuinely welcome, and so is respectful uncertainty.</p>
       <p>What this space is not designed for is debate about its foundation. We're not a forum for Side A, Side B, or Side X debates. We're people trying to live faithfully within a particular framework, and we want to do that together without defensiveness or pressure in either direction. If you're exploring these questions and not yet sure where you land, you belong here. If you're looking for a space to advocate for a different theological position, this is probably not the right fit.</p>
       <p>Come curious. Come honest. Come as you are.</p>
     </div>
@@ -648,12 +670,18 @@
 
   <footer role="contentinfo" aria-label="Site footer">
     <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-nav-links">
+      <li><a href="/community">community</a></li>
+      <li><a href="/resources">resources</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/connect">connect</a></li>
+    </ul>
     <ul class="footer-links">
       <li><a href="/privacy">privacy</a></li>
       <li><a href="/terms">terms</a></li>
       <li><a href="/connect">contact</a></li>
     </ul>
-    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved. Soulintension is a 501(c)(3) nonprofit organization.</p>
   </footer>
 
 </body>

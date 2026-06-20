@@ -43,6 +43,25 @@
     a { color: var(--brand); text-decoration: none; border-bottom: 1px solid transparent; }
     a:hover { border-color: var(--brand); }
     .divider { width: 40px; height: 2px; background: var(--border); margin: 3rem 0; }
+
+    .footer-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.78rem;
+      color: var(--light-text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav-links a:hover { color: var(--heading); }
+
     footer { padding: 1.75rem 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .footer-logo { font-size: 0.88rem; color: var(--light-text); text-decoration: none; }
     .footer-links { display: flex; gap: 1.5rem; list-style: none; }
@@ -127,7 +146,7 @@
     <p>By accessing or using soulintension.com, you agree to these terms. If you do not agree, please do not use this site.</p>
 
     <h2>About This Site</h2>
-    <p>soulintension is a personal ministry site offering information, community gatherings, and facilitation services related to faith, sexuality, and the Christian life. It is operated by a sole individual based in Sonoma County, California.</p>
+    <p>Soulintension is a personal ministry site offering information, community gatherings, and facilitation services related to faith, sexuality, and the Christian life. It is operated by a sole individual based in Sonoma County, California.</p>
 
     <h2>Use of This Site</h2>
     <p>You may use this site for personal, non-commercial purposes. You agree not to:</p>
@@ -139,17 +158,17 @@
     </ul>
 
     <h2>Services and Facilitation</h2>
-    <p>soulintension offers one-on-one conversations, educational events, and weekend conferences. Specific terms, pricing, and conditions for paid services will be agreed upon separately before any engagement begins. Nothing on this site constitutes a binding service agreement until explicitly confirmed in writing.</p>
-    <p>soulintension does not provide licensed counseling, therapy, or medical advice. One-on-one conversations are peer support and should not be treated as a substitute for professional mental health or medical care.</p>
+    <p>Soulintension offers one-on-one conversations, educational events, and weekend conferences. Specific terms, pricing, and conditions for paid services will be agreed upon separately before any engagement begins. Nothing on this site constitutes a binding service agreement until explicitly confirmed in writing.</p>
+    <p>Soulintension does not provide licensed counseling, therapy, or medical advice. One-on-one conversations are peer support and should not be treated as a substitute for professional mental health or medical care.</p>
 
     <h2>Community Standards</h2>
-    <p>soulintension community gatherings are Side B spaces. Participants are welcome regardless of where they personally land on questions of faith and sexuality. However, gatherings are not forums for debate about the community's theological foundation. Disruptive behavior or attempts to use community spaces to advocate against the community's stated framework may result in being asked not to return.</p>
+    <p>Soulintension community gatherings are Side B spaces. Participants are welcome regardless of where they personally land on questions of faith and sexuality. However, gatherings are not forums for debate about the community's theological foundation. Disruptive behavior or attempts to use community spaces to advocate against the community's stated framework may result in being asked not to return.</p>
 
     <h2>Intellectual Property</h2>
     <p>All content on this site, including text, images, and design, is the property of soulintension unless otherwise noted. Images sourced from third parties remain the property of their respective owners. You may share links to this site but may not reproduce substantial content without permission.</p>
 
     <h2>Limitation of Liability</h2>
-    <p>soulintension is provided in good faith but without warranty of any kind. We are not liable for any damages arising from your use of this site or participation in any soulintension community or event.</p>
+    <p>Soulintension is provided in good faith but without warranty of any kind. We are not liable for any damages arising from your use of this site or participation in any soulintension community or event.</p>
 
     <h2>External Links</h2>
     <p>This site links to third-party resources including books, organizations, and courses. We are not responsible for the content, accuracy, or practices of external sites.</p>
@@ -167,14 +186,20 @@
     <p><a href="/privacy">View Privacy Policy</a></p>
   </div>
 
-  <footer>
+  <footer role="contentinfo" aria-label="Site footer">
     <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-nav-links">
+      <li><a href="/community">community</a></li>
+      <li><a href="/resources">resources</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/connect">connect</a></li>
+    </ul>
     <ul class="footer-links">
       <li><a href="/privacy">privacy</a></li>
       <li><a href="/terms">terms</a></li>
       <li><a href="/connect">contact</a></li>
     </ul>
-    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved. Soulintension is a 501(c)(3) nonprofit organization.</p>
   </footer>
 </body>
 </html>

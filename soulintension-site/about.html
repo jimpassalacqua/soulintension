@@ -19,6 +19,8 @@
       --light-text: #999999;
       --border: #e0e0e0;
       --brand: #7a6e8a;
+      --link: #8b7aaa;
+      --link-border: #c4b8d8;
       --sans: 'Poppins', system-ui, sans-serif;
     }
 
@@ -249,6 +251,26 @@
       line-height: 1.85;
     }
 
+
+    /* FOOTER NAV LINKS */
+    .footer-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.78rem;
+      color: var(--light-text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav-links a:hover { color: var(--heading); }
+
     /* FOOTER */
     footer {
       padding: 1.75rem 2.5rem;
@@ -276,8 +298,8 @@
     }
 
     @media (max-width: 540px) {
-      .image-grid.cols-3 { grid-template-columns: 1fr; }
-      .image-grid-item { aspect-ratio: 4 / 3; }
+      .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .image-grid-item { aspect-ratio: 1 / 1; }
       .section { padding: 3rem 1.25rem; }
       footer { flex-direction: column; text-align: center; }
     }
@@ -446,7 +468,7 @@
       <p>Maybe you've been carrying something for a long time. A faith you can't let go of, and a sexuality that doesn't fit neatly into the answers your church gave you. Maybe you've felt like you had to choose between the two, or that there simply wasn't a place for someone like you.</p>
       <p>You're not alone in that.</p>
       <p>I'm a follower of Jesus, and I'm also someone who knows firsthand what it's like to sit with questions that don't have easy answers. Questions about identity, belonging, desire, and what it means to walk with God when the path isn't clearly marked.</p>
-      <p><span class="brand">soulintension</span> exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy. A place where faith and honest questions can sit in the same room together.</p>
+      <p><span class="brand">Soulintension</span> exists for LGBT people who are still reaching toward Jesus, even when the path isn't clear and the church hasn't always made it easy. A place where faith and honest questions can sit in the same room together.</p>
       <p>This isn't a space that will tell you your sexuality makes you less loved by God. It's also not a space that'll hand you simple answers or pretend the hard questions aren't real. What it is, what I'm genuinely trying to offer, is honest conversation, real resources, and the kind of presence that makes a difficult road feel less lonely.</p>
       <p>If you're gay, lesbian, bisexual, or questioning, and you're somewhere in the middle of figuring out what faith means for your life, I'd love to hear your story. No agenda. No pressure. Just a conversation.</p>
       <p>Reach out. I'll listen.</p>
@@ -500,12 +522,18 @@
 
   <footer role="contentinfo" aria-label="Site footer">
     <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-nav-links">
+      <li><a href="/community">community</a></li>
+      <li><a href="/resources">resources</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/connect">connect</a></li>
+    </ul>
     <ul class="footer-links">
       <li><a href="/privacy">privacy</a></li>
       <li><a href="/terms">terms</a></li>
       <li><a href="/connect">contact</a></li>
     </ul>
-    <p class="footer-copy">2026 soulintension, inc. All rights reserved.</p>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved. Soulintension is a 501(c)(3) nonprofit organization.</p>
   </footer>
 
 </body>
