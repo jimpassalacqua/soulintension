@@ -240,6 +240,7 @@
 
     /* IMAGE GRID - collage */
     .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.strip { grid-template-columns: repeat(4, 1fr); }
     .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 
     .image-grid-item { aspect-ratio: 1 / 1; overflow: hidden; }
@@ -541,11 +542,8 @@
     </div>
   </section>
 
-  <!-- COLLAGE: 6 images, 3 across, 2 rows, all B&W -->
-  <div class="image-grid cols-3">
-    <div class="image-grid-item">
-      <img class="bw" src="/images/sculpture.webp" alt="Abstract metallic sculpture" />
-    </div>
+  <!-- COLLAGE: 4 images, 4 across, single line, all B&W -->
+  <div class="image-grid strip">
     <div class="image-grid-item">
       <img class="bw" src="/images/boy-microphone.webp" alt="A young boy shouting into a microphone" />
     </div>
@@ -554,9 +552,6 @@
     </div>
     <div class="image-grid-item">
       <img class="bw" src="/images/bearded-man.webp" alt="A man with a beard covering one eye" />
-    </div>
-    <div class="image-grid-item">
-      <img class="bw" src="/images/butterfly.webp" alt="Close-up of a butterfly on a flower" />
     </div>
     <div class="image-grid-item">
       <img class="bw" src="/images/window-man.webp" alt="A person sitting at a window" />

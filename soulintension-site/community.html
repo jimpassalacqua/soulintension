@@ -219,6 +219,7 @@
 
     /* IMAGE GRID */
     .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.strip { grid-template-columns: repeat(4, 1fr); }
     .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .image-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
 
@@ -614,13 +615,19 @@
     </div>
   </section>
 
-  <!-- COLORFUL IMAGE GRID: 2 across -->
-  <div class="image-grid cols-2">
+  <!-- COLORFUL IMAGE GRID: 4 across (new set) -->
+  <div class="image-grid strip">
     <div class="image-grid-item">
-      <img class="color" src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
+      <img class="color" src="/images/abstract2c.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
     <div class="image-grid-item">
-      <img class="color" src="/images/abstract-lines.webp" alt="" aria-hidden="true" role="presentation" />
+      <img class="color" src="/images/abstract2a.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img class="color" src="/images/abstract2d.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img class="color" src="/images/abstract2b.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
   </div>
 
@@ -701,13 +708,19 @@
     </div>
   </section>
 
-  <!-- SECOND IMAGE GRID: 2 across, remaining colorful images -->
-  <div class="image-grid cols-2">
+  <!-- SECOND IMAGE GRID: 4 across (existing set) -->
+  <div class="image-grid strip">
     <div class="image-grid-item">
-      <img class="color" src="/images/abstract-curves.webp" alt="" aria-hidden="true" role="presentation" />
+      <img class="color" src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
     <div class="image-grid-item">
       <img class="color" src="/images/abstract-neon-lines.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img class="color" src="/images/abstract-cubes.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img class="color" src="/images/abstract-lines.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
   </div>
 

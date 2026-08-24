@@ -269,6 +269,7 @@
 
     /* IMAGE GRID */
     .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.strip { grid-template-columns: repeat(4, 1fr); }
     .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
     .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
 
@@ -552,19 +553,19 @@
     </div>
   </section>
 
-  <!-- COLORFUL IMAGE GRID: 4 across -->
-  <div class="image-grid cols-4">
-    <div class="image-grid-item">
-      <img src="/images/abstract-cubes.webp" alt="" aria-hidden="true" role="presentation" />
-    </div>
-    <div class="image-grid-item">
-      <img src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
-    </div>
+  <!-- COLORFUL IMAGE GRID: 4 across (existing set) -->
+  <div class="image-grid strip">
     <div class="image-grid-item">
       <img src="/images/abstract-lines.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
     <div class="image-grid-item">
+      <img src="/images/abstract-cubes.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
       <img src="/images/abstract-neon-lines.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
   </div>
 
@@ -631,13 +632,19 @@
     </div>
   </section>
 
-  <!-- COLORFUL IMAGE GRID: 2 across mid-page -->
-  <div class="image-grid cols-2">
+  <!-- COLORFUL IMAGE GRID: 4 across mid-page (new set) -->
+  <div class="image-grid strip">
     <div class="image-grid-item">
-      <img src="/images/abstract-neon-lines.webp" alt="" aria-hidden="true" role="presentation" />
+      <img src="/images/abstract2b.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
     <div class="image-grid-item">
-      <img src="/images/abstract-swirl.webp" alt="" aria-hidden="true" role="presentation" />
+      <img src="/images/abstract2d.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract2a.webp" alt="" aria-hidden="true" role="presentation" />
+    </div>
+    <div class="image-grid-item">
+      <img src="/images/abstract2c.webp" alt="" aria-hidden="true" role="presentation" />
     </div>
   </div>
 
