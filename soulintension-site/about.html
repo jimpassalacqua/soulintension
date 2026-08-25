@@ -127,14 +127,25 @@
       width: 100%;
     }
 
-    .page-hero-text .eyebrow {
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
+        .page-hero-text .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.9);
       margin-bottom: 0.75rem;
-      display: block;
-      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .page-hero-text .eyebrow::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #c4b8d8;
+      flex-shrink: 0;
     }
 
     .page-hero-text h1 {
@@ -180,14 +191,25 @@
     .section-inner { max-width: 680px; margin: 0 auto; }
     .section-inner.centered { text-align: center; }
 
-    .section-label {
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
+        .section-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--body);
+      color: var(--brand);
       margin-bottom: 0.85rem;
-      display: block;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .section-label::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex-shrink: 0;
     }
 
     .section h2 {
