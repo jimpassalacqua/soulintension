@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you." />
+  <title>Can You Be Gay and Christian? | soulintension</title>
+  <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --off-white: #f5f5f5;
+      --heading: #555555;
+      --body: #666666;
+      --light-text: #999999;
+      --border: #e0e0e0;
+      --brand: #7a6e8a;
+      --link: #8b7aaa;
+      --link-border: #c4b8d8;
+      --sans: 'Poppins', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--body);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 2.5rem;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-social {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-social a {
+      color: var(--light-text);
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .nav-social a:hover { color: var(--heading); }
+
+    .nav-social svg { width: 16px; height: 16px; display: block; fill: currentColor; }
+
+    @media (max-width: 1150px) { .nav-social { display: none; } }
+
+    .nav-logo { text-decoration: none; display: flex; align-items: center; }
+    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+
+    .nav-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--heading); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--heading); }
+
+    /* PAGE HERO */
+    .page-hero {
+      margin-top: 4.5rem;
+      position: relative;
+      width: 100%;
+      min-height: 52vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #1a1a1a;
+    }
+
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+    }
+
+    .page-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%);
+    }
+
+    .page-hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 3rem 5vw;
+      width: 100%;
+    }
+
+            .page-hero-text .eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0.75rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .page-hero-text h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    /* BUTTONS */
+    .btn {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
+      text-transform: lowercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      transition: all 0.2s;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      border: 1.5px solid var(--heading);
+      color: var(--heading);
+      background: transparent;
+    }
+
+    .btn-outline:hover { background: var(--heading); color: var(--white); }
+
+    /* SECTIONS */
+    .section { padding: 5rem 2rem; }
+
+    .section.alt {
+      background: var(--off-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner { max-width: 860px; margin: 0 auto; }
+    .section-inner.centered { text-align: center; max-width: 680px; }
+    .faq-item { margin-top: 2rem; }
+    .faq-q { font-size: 1.05rem; color: var(--heading); font-weight: 500; margin: 0 0 0.5rem; }
+    .faq-a { color: var(--body); line-height: 1.7; margin: 0; max-width: 720px; }
+
+            .section-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 0.85rem;
+      display: block;
+      font-weight: 600;
+    }
+
+    .section h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section p {
+      font-size: 1.02rem;
+      color: var(--body);
+      line-height: 1.85;
+      margin-bottom: 1rem;
+    }
+
+    .section-intro {
+      font-size: 0.95rem;
+      color: var(--light-text);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* RESOURCE LIST */
+    .resource-list {
+      list-style: none;
+      margin-top: 1.75rem;
+    }
+
+    .resource-list li {
+      border-top: 1px solid var(--border);
+      padding: 1.4rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .resource-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resource-list a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #8b7aaa;
+      text-decoration: none;
+      transition: color 0.2s;
+      line-height: 1.4;
+    }
+
+    .resource-list a:hover { color: #5a4a7a; }
+
+    .resource-meta {
+      font-size: 0.8rem;
+      color: var(--light-text);
+      letter-spacing: 0.04em;
+      font-weight: 400;
+    }
+
+    .resource-desc {
+      font-size: 0.95rem;
+      color: var(--body);
+      line-height: 1.75;
+      margin-top: 0.15rem;
+    }
+
+    /* SUB LABEL within a section */
+        .sub-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+      display: block;
+      margin-top: 2.5rem;
+      margin-bottom: 0;
+    }
+
+    /* IMAGE GRID */
+    .image-grid { display: grid; gap: 0; width: 100%; }
+    .image-grid.strip { grid-template-columns: repeat(4, 1fr); }
+    .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+    .image-grid-item { aspect-ratio: 1 / 1; overflow: hidden; }
+
+    .image-grid-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .image-grid-item img:hover { transform: scale(1.03); }
+
+    /* FOOTER CTA */
+    .footer-cta {
+      padding: 6rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-cta h2 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 600;
+      color: var(--heading);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-cta p {
+      color: var(--body);
+      max-width: 440px;
+      margin: 0 auto 2.25rem;
+      font-size: 1.02rem;
+      line-height: 1.85;
+    }
+
+    /* FOOTER NAV LINKS */
+        .footer-nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .footer-nav-links a {
+      font-size: 0.78rem;
+      color: var(--light-text);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      text-transform: lowercase;
+      transition: color 0.2s;
+      font-weight: 400;
+    }
+
+    .footer-nav-links a:hover { color: var(--heading); }
+
+    /* FOOTER */
+    footer {
+      padding: 1.75rem 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo { font-size: 0.88rem; font-weight: 400; color: var(--light-text); text-decoration: none; }
+    .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--light-text); text-decoration: none; letter-spacing: 0.05em; text-transform: lowercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--heading); }
+    .footer-social {
+      display: flex;
+      gap: 1.35rem;
+      list-style: none;
+      width: 100%;
+      justify-content: center;
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    .footer-social a {
+      color: var(--light-text);
+      display: inline-flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover { color: var(--heading); }
+
+    .footer-social svg { width: 17px; height: 17px; display: block; fill: currentColor; }
+
+    .footer-copy { font-size: 0.73rem; color: #bbb; width: 100%; text-align: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      nav { padding: 0.75rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 3.75rem 1.5rem; }
+      .image-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .image-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+      .image-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+      .image-grid-item { aspect-ratio: 1 / 1; }
+      .section { padding: 3rem 1.25rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  
+    /* BLOG */
+    .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 1.5rem; }
+    .post-card { display: flex; flex-direction: column; text-decoration: none; }
+    .post-card-image { aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 1.25rem; background: var(--off-white); }
+    .post-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .post-card:hover .post-card-image img { transform: scale(1.03); }
+    .post-card-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); font-weight: 600; margin-bottom: 0.6rem; }
+    .post-card h3 { font-family: var(--sans); font-size: 1.3rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 0 0 0.6rem; }
+    .post-card p { font-size: 0.95rem; color: var(--body); line-height: 1.7; margin: 0 0 0.75rem; }
+    .post { padding: 4rem 2rem 5rem; }
+    .post-inner { max-width: 720px; margin: 0 auto; }
+    .breadcrumb { font-size: 0.78rem; color: var(--light-text); letter-spacing: 0.03em; margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--light-text); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--brand); }
+    .breadcrumb .sep { margin: 0 0.4rem; color: #ccc; }
+    .post-meta { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); font-weight: 600; margin-bottom: 2rem; }
+    .post-body p { font-size: 1.05rem; color: var(--body); line-height: 1.85; margin: 0 0 1.5rem; }
+    .post-body p:first-of-type { font-size: 1.18rem; color: var(--heading); line-height: 1.7; }
+    .post-body h2 { font-family: var(--sans); font-size: 1.5rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 2.75rem 0 1rem; letter-spacing: -0.01em; }
+    .post-body strong { color: var(--heading); font-weight: 600; }
+  </style>
+  <!-- SEO -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.soulintension.com/blog/can-you-be-gay-and-christian" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Can You Be Gay and Christian? | soulintension" />
+  <meta property="og:description" content="Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you." />
+  <meta property="og:url" content="https://www.soulintension.com/blog/can-you-be-gay-and-christian" />
+  <meta property="og:image" content="https://www.soulintension.com/images/blog-placeholder.webp" />
+  <meta property="og:site_name" content="soulintension" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Can You Be Gay and Christian? | soulintension" />
+  <meta name="twitter:description" content="Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you." />
+  <meta name="twitter:image" content="https://www.soulintension.com/images/blog-placeholder.webp" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Can You Be Gay and Christian?",
+    "description": "Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you.",
+    "image": "https://www.soulintension.com/images/blog-placeholder.webp",
+    "url": "https://www.soulintension.com/blog/can-you-be-gay-and-christian",
+    "datePublished": "2026-09-11",
+    "dateModified": "2026-09-11",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Organization",
+      "name": "soulintension",
+      "url": "https://www.soulintension.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "soulintension",
+      "url": "https://www.soulintension.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.soulintension.com/images/soulintensionlogo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.soulintension.com/blog/can-you-be-gay-and-christian"
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "soulintension blog",
+      "url": "https://www.soulintension.com/blog"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "home",
+        "item": "https://www.soulintension.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "blog",
+        "item": "https://www.soulintension.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Can You Be Gay and Christian?",
+        "item": "https://www.soulintension.com/blog/can-you-be-gay-and-christian"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Google Analytics (loads only after cookie consent) -->
+  <script>
+    function loadAnalytics() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C060XD6BBF';
+      s.async = true;
+      document.head.appendChild(s);
+      s.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C060XD6BBF', {anonymize_ip: true});
+      };
+    }
+    if (localStorage.getItem('si_cookies') === 'accepted') { loadAnalytics(); }
+  </script>
+
+  <!-- ACCESSIBILITY: focus styles and keyboard navigation -->
+  <style>
+    /* Visible focus indicator for keyboard navigation */
+    *:focus-visible {
+      outline: 3px solid #7a6e8a;
+      outline-offset: 3px;
+    }
+
+    /* Remove outline for mouse users, keep for keyboard */
+    *:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    /* Ensure sufficient color contrast on links */
+    a:hover { text-decoration: underline; }
+
+    /* High contrast mode support */
+    @media (forced-colors: active) {
+      .btn, button { border: 2px solid ButtonText; }
+      nav { border-bottom: 1px solid ButtonText; }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <script>
+    // Hamburger menu keyboard toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      var hamburger = document.querySelector('.hamburger');
+      var navLinks = document.getElementById('nav-links');
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+          var expanded = hamburger.getAttribute('aria-expanded') === 'true';
+          hamburger.setAttribute('aria-expanded', !expanded);
+          navLinks.style.display = expanded ? 'none' : 'flex';
+          navLinks.style.flexDirection = 'column';
+          navLinks.style.position = 'absolute';
+          navLinks.style.top = '100%';
+          navLinks.style.left = '0';
+          navLinks.style.right = '0';
+          navLinks.style.background = '#fff';
+          navLinks.style.padding = '1rem 1.5rem';
+          navLinks.style.borderBottom = '1px solid #e0e0e0';
+          navLinks.style.gap = '0.75rem';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <a href="#main-content" style="position:absolute;top:-100px;left:0;background:#555555;color:#ffffff;padding:0.75rem 1.5rem;font-family:'Poppins',sans-serif;font-size:0.85rem;font-weight:500;z-index:10000;text-decoration:none;border:none;" onfocus="this.style.top='0'" onblur="this.style.top='-100px'">skip to main content</a>
+
+  <!-- COOKIE CONSENT BANNER -->
+  <div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:999; background:#ffffff; border-top:1px solid #e0e0e0; padding:1.25rem 2rem; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.85rem; color:#666;">
+    <p style="margin:0; max-width:600px; line-height:1.6;">We use cookies to understand how visitors use this site. No personal data is sold or shared. <a href="/privacy" style="color:#7a6e8a; text-decoration:none; border-bottom:1px solid #c4bcd4;">Privacy Policy</a></p>
+    <div style="display:flex; gap:0.75rem; flex-shrink:0;">
+      <button onclick="acceptCookies()" style="background:#555555; color:#fff; border:none; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">accept</button>
+      <button onclick="declineCookies()" style="background:transparent; color:#666; border:1px solid #e0e0e0; padding:0.6rem 1.25rem; font-family:'Poppins',system-ui,sans-serif; font-size:0.8rem; font-weight:500; cursor:pointer; letter-spacing:0.05em;">decline</button>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('si_cookies');
+      if (!consent) { document.getElementById('cookie-banner').style.display = 'flex'; }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('si_cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadAnalytics();
+    }
+    function declineCookies() {
+      localStorage.setItem('si_cookies', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+  <nav role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav-logo">
+      <img src="/images/soulintensionlogo.png" alt="soulintension" width="auto" height="46" style="display:block;" />
+    </a>
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/community" tabindex="0">community</a></li>
+      <li><a href="/resources" tabindex="0">resources</a></li>
+      <li><a href="/blog" class="active">blog</a></li>
+      <li><a href="/about" tabindex="0">about</a></li>
+      <li><a href="/connect" tabindex="0">connect</a></li>
+      <li><a href="/faq" tabindex="0">faq</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" type="button">
+      <span></span><span></span>
+    </button>
+    <ul class="nav-social" aria-label="Social media">
+      <li><a href="https://www.facebook.com/a.soulintension" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
+      <li><a href="https://www.instagram.com/a.soulintension" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li>
+      <li><a href="https://www.tiktok.com/@soulintension" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
+    </ul>
+  </nav>
+
+      <!-- PAGE HERO -->
+  <div class="page-hero" id="main-content" role="main">
+    <div class="page-hero-bg" style="background-image: url('/images/blog-placeholder.webp');"></div>
+    <div class="page-hero-gradient"></div>
+    <div class="page-hero-text">
+      <span class="eyebrow">from the blog</span>
+      <h1>Can You Be Gay and Christian?</h1>
+    </div>
+  </div>
+
+  <!-- POST -->
+  <article class="post">
+    <div class="post-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">home</a><span class="sep">/</span><a href="/blog">blog</a><span class="sep">/</span><span aria-current="page">Can You Be Gay and Christian?</span></nav>
+      <div class="post-meta">soulintension &middot; September 2026</div>
+      <div class="post-body">
+      <p>Yes. If you're gay and you love Jesus, you are not disqualified from following him. You are not a project to fix or a problem to manage. You are a person God made, a person God loves, and a person who is welcome to walk with him for the rest of your life.</p>
+      <p>That's the short answer. If you want to understand where it comes from and what it actually asks of you, keep reading, because the honest version of this question deserves more than a slogan.</p>
+      <h2>The question behind the question</h2>
+      <p>When people ask "can you be gay and Christian," they're usually not asking a purely academic question about theology. They're asking something closer to: is there room for me here? Will I be tolerated at best and pitied at worst, or is there an actual place at the table?</p>
+      <p>Underneath that is often a second question, one shaped by years of church experience, good or bad: does following Jesus mean I have to stop being who I am?</p>
+      <p>The answer to the first question is yes, there is a place at the table. The answer to the second depends on what you mean by "who I am," and that's worth slowing down on.</p>
+      <h2>Orientation is not the same as identity, and identity is not the same as calling</h2>
+      <p>Being attracted to the same sex is something you experience, not something you chose and not something you can simply decide to stop experiencing. Christians across a wide range of convictions increasingly recognize this. The old framing, that same-sex attraction is purely a choice or purely a symptom of something broken in someone's upbringing, doesn't hold up to the actual lived experience of most gay Christians, and it isn't required by Scripture either.</p>
+      <p>What Christians do disagree on, in good faith, is what a person does with that experience. This is where you'll hear terms like Side A and Side B.</p>
+      <p><strong>Side A</strong> Christians read Scripture as affirming same-sex marriage and relationships, understanding the traditional prohibition texts differently than the historic church has.</p>
+      <p><strong>Side B</strong> Christians, which is the tradition soulintension comes from, hold to the historic Christian teaching that marriage is between a man and a woman, while fully affirming that gay, lesbian, and bisexual people are not required to change their orientation, are not lesser Christians, and are not on the margins of the family of God. Side B is not conversion therapy in disguise, and it is not a demand that every gay Christian must be celibate for life. Orientation doesn't dictate a person's calling. Some Side B Christians marry someone of the opposite sex, some remain single, and some hold that decision open. What Side B insists on is that sexual expression is reserved for marriage between a man and a woman, and it insists just as firmly that gay Christians belong fully in the church regardless of which path they walk.</p>
+      <p>Neither Side A nor Side B is a fringe position invented last decade. Both represent serious, sustained engagement with Scripture by people who love Jesus and take the Bible seriously. This isn't a post where we're going to relitigate that whole debate. It's a post about the question that comes before it: are you welcome here at all. And on that question, the historic answer of the church, however badly individual churches have lived it out, has always been yes.</p>
+      <h2>Where the church has actually failed</h2>
+      <p>Here's the honest part. If you're gay and you grew up in church, there's a good chance the message you actually received wasn't "you're welcome here while we work out the theology together." It was closer to "you're a threat," or "you're a project," or just silence, which can be its own kind of message.</p>
+      <p>That failure is real, and it's not a failure of theology so much as a failure of posture. A church can hold a traditional sexual ethic and still fail badly at loving the actual gay person sitting in the pew. Those are two different things, and conflating them is part of why so many people walk away concluding that the only options are to abandon the faith or abandon themselves. That's a false choice, and it's one we exist to push back on.</p>
+      <h2>So, can you be gay and Christian?</h2>
+      <p>Yes. Fully, genuinely, without an asterisk on your worth or your welcome. What you do with your convictions about sexual ethics, and how you understand your own experience of attraction, is a real question that deserves real thought and real community to walk through, not a quick answer from a blog post. But the question of whether you belong in the family of God is already settled. You do.</p>
+      <p>If you want to think through what that looks like in practice, that's exactly the conversation soulintension exists to have. Not from a distance, and not as a project to be managed, but as people who've walked this road and want to walk it with you.</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <span class="section-label">not from a distance</span>
+    <h2>let's talk it<br />through together.</h2>
+    <p>This is exactly the conversation soulintension exists to have. Not as a project to manage, but as people who've walked this road.</p>
+    <a href="/connect" class="btn btn-outline">start a conversation</a>
+  </div>
+
+  <footer role="contentinfo" aria-label="Site footer">
+    <a href="/" class="footer-logo">soulintension</a>
+    <ul class="footer-nav-links">
+      <li><a href="/community">community</a></li>
+      <li><a href="/resources">resources</a></li>
+      <li><a href="/blog">blog</a></li>
+      <li><a href="/about">about</a></li>
+      <li><a href="/connect">connect</a></li>
+      <li><a href="/faq">faq</a></li>
+    </ul>
+    <ul class="footer-links">
+      <li><a href="/privacy">privacy</a></li>
+      <li><a href="/terms">terms</a></li>
+      <li><a href="/connect">contact</a></li>
+    </ul>
+    <ul class="footer-social">
+      <li><a href="https://www.facebook.com/a.soulintension" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a></li>
+      <li><a href="https://www.instagram.com/a.soulintension" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></li>
+      <li><a href="https://www.tiktok.com/@soulintension" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></li>
+    </ul>
+    <p class="footer-copy">2026 soulintension, inc. All rights reserved. Soulintension is a 501(c)(3) nonprofit organization.</p>
+  </footer>
+
+</body>
+</html>
