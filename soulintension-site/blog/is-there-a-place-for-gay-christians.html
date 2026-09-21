@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <title>blog | essays on faith and sexuality | soulintension</title>
+  <meta name="description" content="Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap." />
+  <title>Is there a place for gay Christians in the church? | soulintension</title>
   <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -112,6 +112,11 @@
       background-size: cover;
       background-position: center;
       filter: brightness(0.5);
+    }
+    .page-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%);
     }
 
     .page-hero-gradient {
@@ -388,13 +393,11 @@
     /* BLOG */
     .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 1.5rem; }
     .post-card { display: flex; flex-direction: column; text-decoration: none; }
-    .post-card-image { display: block; aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 1.25rem; background: var(--off-white); }
+    .post-card-image { aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 1.25rem; background: var(--off-white); }
     .post-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-    .post-card-image:hover img { transform: scale(1.03); }
+    .post-card:hover .post-card-image img { transform: scale(1.03); }
     .post-card-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); font-weight: 600; margin-bottom: 0.6rem; }
     .post-card h3 { font-family: var(--sans); font-size: 1.3rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 0 0 0.6rem; }
-    .post-card h3 a { color: inherit; text-decoration: none; }
-    .post-card h3 a:hover { color: var(--brand); }
     .post-card p { font-size: 0.95rem; color: var(--body); line-height: 1.7; margin: 0 0 0.75rem; }
     .post { padding: 4rem 2rem 5rem; }
     .post-inner { max-width: 720px; margin: 0 auto; }
@@ -407,37 +410,43 @@
     .post-body p:first-of-type { font-size: 1.18rem; color: var(--heading); line-height: 1.7; }
     .post-body h2 { font-family: var(--sans); font-size: 1.5rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 2.75rem 0 1rem; letter-spacing: -0.01em; }
     .post-body strong { color: var(--heading); font-weight: 600; }
+    .post-note { font-size: 0.92rem; color: var(--light-text); border-left: 2px solid var(--border); padding-left: 1rem; margin: -0.5rem 0 1.75rem; }
+    .post-note a { color: var(--brand); }
   </style>
   <!-- SEO -->
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.soulintension.com/blog" />
+  <link rel="canonical" href="https://www.soulintension.com/blog/is-there-a-place-for-gay-christians" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="blog | essays on faith and sexuality | soulintension" />
-  <meta property="og:description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <meta property="og:url" content="https://www.soulintension.com/blog" />
-  <meta property="og:image" content="https://www.soulintension.com/images/abstract2c.webp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Is there a place for gay Christians in the church? | soulintension" />
+  <meta property="og:description" content="Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap." />
+  <meta property="og:url" content="https://www.soulintension.com/blog/is-there-a-place-for-gay-christians" />
+  <meta property="og:image" content="https://www.soulintension.com/images/blog-is-there-a-place-for-gay-christians.webp" />
   <meta property="og:site_name" content="soulintension" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="blog | essays on faith and sexuality | soulintension" />
-  <meta name="twitter:description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <meta name="twitter:image" content="https://www.soulintension.com/images/abstract2c.webp" />
+  <meta name="twitter:title" content="Is there a place for gay Christians in the church? | soulintension" />
+  <meta name="twitter:description" content="Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap." />
+  <meta name="twitter:image" content="https://www.soulintension.com/images/blog-is-there-a-place-for-gay-christians.webp" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "soulintension blog",
-    "description": "Essays on faith, sexuality, and the honest questions in between, from a Side B perspective.",
-    "url": "https://www.soulintension.com/blog",
+    "@type": "BlogPosting",
+    "headline": "Is there a place for gay Christians in the church?",
+    "description": "Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap.",
+    "image": "https://www.soulintension.com/images/blog-is-there-a-place-for-gay-christians.webp",
+    "url": "https://www.soulintension.com/blog/is-there-a-place-for-gay-christians",
+    "datePublished": "2026-09-20",
+    "dateModified": "2026-09-20",
+  "wordCount": 860,
     "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
+    "author": {
+      "@type": "Organization",
       "name": "soulintension",
       "url": "https://www.soulintension.com"
     },
@@ -445,9 +454,46 @@
       "@type": "Organization",
       "name": "soulintension",
       "url": "https://www.soulintension.com",
-      "logo": "https://www.soulintension.com/images/soulintensionlogo.png"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.soulintension.com/images/soulintensionlogo.png"
+      }
     },
-    "blogPost":[{"@type":"BlogPosting","headline":"Is there a place for gay Christians in the church?","url":"https://www.soulintension.com/blog/is-there-a-place-for-gay-christians","datePublished":"2026-09-20","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"Side A vs Side B: an honest comparison","url":"https://www.soulintension.com/blog/side-a-vs-side-b","datePublished":"2026-08-19","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"What is Side B Christianity?","url":"https://www.soulintension.com/blog/what-is-side-b-christianity","datePublished":"2026-07-15","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"Can you be gay and Christian?","url":"https://www.soulintension.com/blog/can-you-be-gay-and-christian","datePublished":"2026-06-11","author":{"@type":"Organization","name":"soulintension"}}]
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.soulintension.com/blog/is-there-a-place-for-gay-christians"
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "soulintension blog",
+      "url": "https://www.soulintension.com/blog"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "home",
+        "item": "https://www.soulintension.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "blog",
+        "item": "https://www.soulintension.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Is there a place for gay Christians in the church?",
+        "item": "https://www.soulintension.com/blog/is-there-a-place-for-gay-christians"
+      }
+    ]
   }
   </script>
 
@@ -571,61 +617,49 @@
     </ul>
   </nav>
 
-    <!-- PAGE HERO -->
+            <!-- PAGE HERO -->
   <div class="page-hero" id="main-content" role="main">
-    <div class="page-hero-bg" style="background-image: url('/images/abstract2c.webp');"></div>
+    <div class="page-hero-bg" style="background-image: url('/images/blog-is-there-a-place-for-gay-christians.webp');"></div>
     <div class="page-hero-gradient"></div>
     <div class="page-hero-text">
-      <span class="eyebrow">a deeper look</span>
-      <h1>blog</h1>
+      <span class="eyebrow">from the blog</span>
+      <h1>Is there a place for gay Christians in the church?</h1>
     </div>
   </div>
 
-  <!-- BLOG INDEX -->
-  <section class="section">
-    <div class="section-inner wide">
-      <span class="section-label">reflections</span>
-      <h2>essays and honest questions</h2>
-      <p>Thoughts on faith, sexuality, and the road in between.</p>
-      <div class="post-grid">
-        <div class="post-card">
-          <a href="/blog/is-there-a-place-for-gay-christians" class="post-card-image" aria-label="Read: Is there a place for gay Christians in the church?"><img src="/images/blog-is-there-a-place-for-gay-christians.webp" alt="Is there a place for gay Christians in the church?" /></a>
-          <span class="post-card-date">September 2026</span>
-          <h3><a href="/blog/is-there-a-place-for-gay-christians">Is there a place for gay Christians in the church?</a></h3>
-          <p>Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap.</p>
-          <a href="/blog/is-there-a-place-for-gay-christians" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/side-a-vs-side-b" class="post-card-image" aria-label="Read: Side A vs Side B: an honest comparison"><img src="/images/blog-side-a-vs-side-b.webp" alt="Side A vs Side B: an honest comparison" /></a>
-          <span class="post-card-date">August 2026</span>
-          <h3><a href="/blog/side-a-vs-side-b">Side A vs Side B: an honest comparison</a></h3>
-          <p>Side A affirms same-sex marriage. Side B holds the traditional sexual ethic while fully welcoming gay and lesbian people. Here's an honest look at where the two positions actually agree, and where they differ.</p>
-          <a href="/blog/side-a-vs-side-b" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/what-is-side-b-christianity" class="post-card-image" aria-label="Read: What is Side B Christianity?"><img src="/images/blog-what-is-side-b-christianity.webp" alt="What is Side B Christianity?" /></a>
-          <span class="post-card-date">July 2026</span>
-          <h3><a href="/blog/what-is-side-b-christianity">What is Side B Christianity?</a></h3>
-          <p>Side B holds that a person can be gay, lesbian, or bisexual and keep the historic Christian teaching on marriage, without it disqualifying them from full belonging. Here's what that actually means, and what it doesn't.</p>
-          <a href="/blog/what-is-side-b-christianity" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/can-you-be-gay-and-christian" class="post-card-image" aria-label="Read: Can you be gay and Christian?"><img src="/images/blog-can-you-be-gay-and-christian.webp" alt="Can you be gay and Christian?" /></a>
-          <span class="post-card-date">June 2026</span>
-          <h3><a href="/blog/can-you-be-gay-and-christian">Can you be gay and Christian?</a></h3>
-          <p>Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you.</p>
-          <a href="/blog/can-you-be-gay-and-christian" class="text-link">read more</a>
-        </div>
+  <!-- POST -->
+  <article class="post">
+    <div class="post-inner">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">home</a><span class="sep">/</span><a href="/blog">blog</a><span class="sep">/</span><span aria-current="page">Is there a place for gay Christians in the church?</span></div>
+      <div class="post-meta">soulintension &middot; September 2026</div>
+      <div class="post-body">
+      <p>Yes. If you're gay or lesbian and you love Jesus, there is a place for you in the church, not as a guest under review but as a full member of the body. That's the theological answer, and it's not a close call.</p>
+      <p>It's also not the answer most gay and lesbian Christians have actually experienced. If you asked instead, "Has the church acted like there's a place for me," a lot of people would have to say no, and they'd be right. This post is about that gap, why it exists, and what's actually true underneath it.</p>
+      <h2>The church has failed here, on its own terms</h2>
+      <p>Here's what makes this failure different from a lot of other church failures: it's not usually a failure to live up to some outside standard imposed on the church from without. It's a failure to live up to the church's own stated convictions.</p>
+      <p>Most churches will tell you, in their own language, that grace isn't earned, that no one is beyond the reach of God's love, that the church exists to welcome the broken and not just the put-together, that belonging isn't contingent on having your life sorted out first. Those aren't fringe ideas. They're basic to what most churches already claim to believe.</p>
+      <p>And then a gay or lesbian person walks in the door, and for a lot of churches, all of that gets quietly suspended. Suddenly grace has fine print. Suddenly welcome comes with a probationary period. Suddenly the person who's supposed to be safe to bring their whole self to church learns, often without anyone saying it out loud, that this particular part of themselves is the one thing they'd better not bring.</p>
+      <p>That's not the church holding a hard line out of conviction. Plenty of churches can hold a traditional sexual ethic and still get this right. What's actually happening in the churches that fail here is simpler and less flattering: fear, discomfort, or a desire to avoid controversy dressed up as theological seriousness. The church isn't failing because it took its own convictions too seriously. It's failing because it didn't apply them to everyone equally.</p>
+      <h2>What's actually certain</h2>
+      <p>Here's what doesn't depend on any of that. Your belonging to Christ isn't something a congregation grants you or withholds from you. It's not up for a vote, it's not contingent on a pastor's comfort level, and it doesn't get revoked because the people around you handled it badly. If you belong to Christ, you belong to Him regardless of how any particular room full of people treated you on a Sunday morning.</p>
+      <p>That's not a small consolation prize offered instead of real belonging. It's the actual foundation underneath everything else. Communion with Christ is the one form of belonging in this whole picture that nothing and no one can take from you. Churches can fail you. People can fail you. Christ does not. Full stop.</p>
+      <h2>What's not guaranteed</h2>
+      <p>Here's the honest part, and it's the part a lot of well-meaning content in this space skips over. Belonging to Christ does not automatically translate into a specific local community that will treat you the way it should. Finding a church, a small group, a set of Christian friends who will welcome you is real work, and it's not guaranteed to go smoothly, even when you do everything right.</p>
+      <p>Some of you reading this have already been burned by a church that promised safety and didn't deliver it. Hearing "there's a place for you in the church" can land as naive at best and dishonest at worst when your actual experience says otherwise. That reaction is fair, and we're not going to pretend it isn't.</p>
+      <p>So we won't promise you that the next church you try will get it right, or that community and relationships will come easily, or that this will stop being hard. What we will say is that your belonging to Christ isn't waiting on any of that to be sorted out first, and that a good community, imperfect as it will inevitably be, is worth continuing to look for rather than giving up on entirely. Those are two different claims, and collapsing them into one, as though finding Christ automatically means finding a community that treats you well, sets people up to feel betrayed when the second one doesn't follow immediately from the first.</p>
+      <h2>Where that leaves you</h2>
+      <p>If you're gay, lesbian, bisexual, or questioning and wondering whether there's room for you in the church, the theological answer is yes, fully and without qualification, and that answer doesn't depend on any specific congregation getting it right. If your real-world experience of church has told you otherwise, that's a real failure on the church's part, not a sign that the theological answer is wrong.</p>
+      <p>If you're looking for a place that's trying to get the posture right, not perfectly, but honestly, that's exactly what soulintension exists to be. Not a promise that every church experience from here on out will be easy. Just people who've walked this road too, and who'd rather sit in the hard parts with you than hand you a slogan or a simple answer.</p>
       </div>
     </div>
-  </section>
+  </article>
 
   <!-- FOOTER CTA -->
   <div class="footer-cta">
-    <span class="section-label">reading only goes so far</span>
-    <h2>want to talk it<br />through in person?</h2>
-    <p>If something here resonates, there's a real community and a real conversation waiting, not from a distance.</p>
-    <a href="/connect" class="btn btn-outline">get in touch</a>
+    <span class="section-label">still looking for that place?</span>
+    <h2>come as you are.<br />we'll walk it out together.</h2>
+    <p>Not a promise that this gets easy. Just people who've walked this road too, and want to walk it with you.</p>
+    <a href="/connect" class="btn btn-outline">start a conversation</a>
   </div>
 
   <footer role="contentinfo" aria-label="Site footer">

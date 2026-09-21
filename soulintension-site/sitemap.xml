@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://www.soulintension.com/blog</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,6 +36,12 @@
   <url>
     <loc>https://www.soulintension.com/blog/side-a-vs-side-b</loc>
     <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.soulintension.com/blog/is-there-a-place-for-gay-christians</loc>
+    <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
