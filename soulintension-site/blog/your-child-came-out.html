@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <title>blog | essays on faith and sexuality | soulintension</title>
+  <meta name="description" content="Your child came out, and you hold a traditional faith. How you respond now matters more than having your theology fully sorted out. Here's what that actually looks like, whether that first conversation went well or not." />
+  <title>Your child came out and you hold a traditional faith. Now what? | soulintension</title>
   <link rel="icon" type="image/webp" href="/images/soulintension_fav.webp" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -112,6 +112,11 @@
       background-size: cover;
       background-position: center;
       filter: brightness(0.5);
+    }
+    .page-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 60%);
     }
 
     .page-hero-gradient {
@@ -388,13 +393,11 @@
     /* BLOG */
     .post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 1.5rem; }
     .post-card { display: flex; flex-direction: column; text-decoration: none; }
-    .post-card-image { display: block; aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 1.25rem; background: var(--off-white); }
+    .post-card-image { aspect-ratio: 16 / 9; overflow: hidden; margin-bottom: 1.25rem; background: var(--off-white); }
     .post-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-    .post-card-image:hover img { transform: scale(1.03); }
+    .post-card:hover .post-card-image img { transform: scale(1.03); }
     .post-card-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brand); font-weight: 600; margin-bottom: 0.6rem; }
     .post-card h3 { font-family: var(--sans); font-size: 1.3rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 0 0 0.6rem; }
-    .post-card h3 a { color: inherit; text-decoration: none; }
-    .post-card h3 a:hover { color: var(--brand); }
     .post-card p { font-size: 0.95rem; color: var(--body); line-height: 1.7; margin: 0 0 0.75rem; }
     .post { padding: 4rem 2rem 5rem; }
     .post-inner { max-width: 720px; margin: 0 auto; }
@@ -407,37 +410,43 @@
     .post-body p:first-of-type { font-size: 1.18rem; color: var(--heading); line-height: 1.7; }
     .post-body h2 { font-family: var(--sans); font-size: 1.5rem; font-weight: 600; color: var(--heading); line-height: 1.3; margin: 2.75rem 0 1rem; letter-spacing: -0.01em; }
     .post-body strong { color: var(--heading); font-weight: 600; }
+    .post-note { font-size: 0.92rem; color: var(--light-text); border-left: 2px solid var(--border); padding-left: 1rem; margin: -0.5rem 0 1.75rem; }
+    .post-note a { color: var(--brand); }
   </style>
   <!-- SEO -->
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.soulintension.com/blog" />
+  <link rel="canonical" href="https://www.soulintension.com/blog/your-child-came-out" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="blog | essays on faith and sexuality | soulintension" />
-  <meta property="og:description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <meta property="og:url" content="https://www.soulintension.com/blog" />
-  <meta property="og:image" content="https://www.soulintension.com/images/abstract2c.webp" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Your child came out and you hold a traditional faith. Now what? | soulintension" />
+  <meta property="og:description" content="Your child came out, and you hold a traditional faith. How you respond now matters more than having your theology fully sorted out. Here's what that actually looks like, whether that first conversation went well or not." />
+  <meta property="og:url" content="https://www.soulintension.com/blog/your-child-came-out" />
+  <meta property="og:image" content="https://www.soulintension.com/images/blog-your-child-came-out.webp" />
   <meta property="og:site_name" content="soulintension" />
   <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="blog | essays on faith and sexuality | soulintension" />
-  <meta name="twitter:description" content="Essays on faith, sexuality, and the honest questions in between, from soulintension, a Side B community in the North Bay for LGBT Christians and allies." />
-  <meta name="twitter:image" content="https://www.soulintension.com/images/abstract2c.webp" />
+  <meta name="twitter:title" content="Your child came out and you hold a traditional faith. Now what? | soulintension" />
+  <meta name="twitter:description" content="Your child came out, and you hold a traditional faith. How you respond now matters more than having your theology fully sorted out. Here's what that actually looks like, whether that first conversation went well or not." />
+  <meta name="twitter:image" content="https://www.soulintension.com/images/blog-your-child-came-out.webp" />
 
   <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "soulintension blog",
-    "description": "Essays on faith, sexuality, and the honest questions in between, from a Side B perspective.",
-    "url": "https://www.soulintension.com/blog",
+    "@type": "BlogPosting",
+    "headline": "Your child came out and you hold a traditional faith. Now what?",
+    "description": "Your child came out, and you hold a traditional faith. How you respond now matters more than having your theology fully sorted out. Here's what that actually looks like, whether that first conversation went well or not.",
+    "image": "https://www.soulintension.com/images/blog-your-child-came-out.webp",
+    "url": "https://www.soulintension.com/blog/your-child-came-out",
+    "datePublished": "2026-09-25",
+    "dateModified": "2026-09-25",
+  "wordCount": 1252,
     "inLanguage": "en",
-    "isPartOf": {
-      "@type": "WebSite",
+    "author": {
+      "@type": "Organization",
       "name": "soulintension",
       "url": "https://www.soulintension.com"
     },
@@ -445,9 +454,46 @@
       "@type": "Organization",
       "name": "soulintension",
       "url": "https://www.soulintension.com",
-      "logo": "https://www.soulintension.com/images/soulintensionlogo.png"
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.soulintension.com/images/soulintensionlogo.png"
+      }
     },
-    "blogPost":[{"@type":"BlogPosting","headline":"Your child came out and you hold a traditional faith. Now what?","url":"https://www.soulintension.com/blog/your-child-came-out","datePublished":"2026-09-25","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"Is there a place for gay Christians in the church?","url":"https://www.soulintension.com/blog/is-there-a-place-for-gay-christians","datePublished":"2026-09-20","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"Side A vs Side B: an honest comparison","url":"https://www.soulintension.com/blog/side-a-vs-side-b","datePublished":"2026-08-19","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"What is Side B Christianity?","url":"https://www.soulintension.com/blog/what-is-side-b-christianity","datePublished":"2026-07-15","author":{"@type":"Organization","name":"soulintension"}},{"@type":"BlogPosting","headline":"Can you be gay and Christian?","url":"https://www.soulintension.com/blog/can-you-be-gay-and-christian","datePublished":"2026-06-11","author":{"@type":"Organization","name":"soulintension"}}]
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.soulintension.com/blog/your-child-came-out"
+    },
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "soulintension blog",
+      "url": "https://www.soulintension.com/blog"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "home",
+        "item": "https://www.soulintension.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "blog",
+        "item": "https://www.soulintension.com/blog"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Your child came out and you hold a traditional faith. Now what?",
+        "item": "https://www.soulintension.com/blog/your-child-came-out"
+      }
+    ]
   }
   </script>
 
@@ -571,68 +617,55 @@
     </ul>
   </nav>
 
-    <!-- PAGE HERO -->
+              <!-- PAGE HERO -->
   <div class="page-hero" id="main-content" role="main">
-    <div class="page-hero-bg" style="background-image: url('/images/abstract2c.webp');"></div>
+    <div class="page-hero-bg" style="background-image: url('/images/blog-your-child-came-out.webp');"></div>
     <div class="page-hero-gradient"></div>
     <div class="page-hero-text">
-      <span class="eyebrow">a deeper look</span>
-      <h1>blog</h1>
+      <span class="eyebrow">from the blog</span>
+      <h1>Your child came out and you hold a traditional faith. Now what?</h1>
     </div>
   </div>
 
-  <!-- BLOG INDEX -->
-  <section class="section">
-    <div class="section-inner wide">
-      <span class="section-label">reflections</span>
-      <h2>essays and honest questions</h2>
-      <p>Thoughts on faith, sexuality, and the road in between.</p>
-      <div class="post-grid">
-        <div class="post-card">
-          <a href="/blog/your-child-came-out" class="post-card-image" aria-label="Read: Your child came out and you hold a traditional faith. Now what?"><img src="/images/blog-your-child-came-out.webp" alt="Your child came out and you hold a traditional faith. Now what?" /></a>
-          <span class="post-card-date">September 2026</span>
-          <h3><a href="/blog/your-child-came-out">Your child came out and you hold a traditional faith. Now what?</a></h3>
-          <p>Your child came out, and you hold a traditional faith. How you respond now matters more than having your theology fully sorted out. Here's what that actually looks like, whether that first conversation went well or not.</p>
-          <a href="/blog/your-child-came-out" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/is-there-a-place-for-gay-christians" class="post-card-image" aria-label="Read: Is there a place for gay Christians in the church?"><img src="/images/blog-is-there-a-place-for-gay-christians.webp" alt="Is there a place for gay Christians in the church?" /></a>
-          <span class="post-card-date">September 2026</span>
-          <h3><a href="/blog/is-there-a-place-for-gay-christians">Is there a place for gay Christians in the church?</a></h3>
-          <p>Yes, there's a place for gay and lesbian Christians in the church, without qualification. Here's why so many haven't experienced that in practice, and what's actually true underneath the gap.</p>
-          <a href="/blog/is-there-a-place-for-gay-christians" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/side-a-vs-side-b" class="post-card-image" aria-label="Read: Side A vs Side B: an honest comparison"><img src="/images/blog-side-a-vs-side-b.webp" alt="Side A vs Side B: an honest comparison" /></a>
-          <span class="post-card-date">August 2026</span>
-          <h3><a href="/blog/side-a-vs-side-b">Side A vs Side B: an honest comparison</a></h3>
-          <p>Side A affirms same-sex marriage. Side B holds the traditional sexual ethic while fully welcoming gay and lesbian people. Here's an honest look at where the two positions actually agree, and where they differ.</p>
-          <a href="/blog/side-a-vs-side-b" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/what-is-side-b-christianity" class="post-card-image" aria-label="Read: What is Side B Christianity?"><img src="/images/blog-what-is-side-b-christianity.webp" alt="What is Side B Christianity?" /></a>
-          <span class="post-card-date">July 2026</span>
-          <h3><a href="/blog/what-is-side-b-christianity">What is Side B Christianity?</a></h3>
-          <p>Side B holds that a person can be gay, lesbian, or bisexual and keep the historic Christian teaching on marriage, without it disqualifying them from full belonging. Here's what that actually means, and what it doesn't.</p>
-          <a href="/blog/what-is-side-b-christianity" class="text-link">read more</a>
-        </div>
-        <div class="post-card">
-          <a href="/blog/can-you-be-gay-and-christian" class="post-card-image" aria-label="Read: Can you be gay and Christian?"><img src="/images/blog-can-you-be-gay-and-christian.webp" alt="Can you be gay and Christian?" /></a>
-          <span class="post-card-date">June 2026</span>
-          <h3><a href="/blog/can-you-be-gay-and-christian">Can you be gay and Christian?</a></h3>
-          <p>Yes. If you're gay and you love Jesus, you are not disqualified from following him. Here's where that answer comes from, and what it actually asks of you.</p>
-          <a href="/blog/can-you-be-gay-and-christian" class="text-link">read more</a>
-        </div>
+  <!-- POST -->
+  <article class="post">
+    <div class="post-inner">
+      <div class="breadcrumb" role="navigation" aria-label="Breadcrumb"><a href="/">home</a><span class="sep">/</span><a href="/blog">blog</a><span class="sep">/</span><span aria-current="page">Your child came out and you hold a traditional faith. Now what?</span></div>
+      <div class="post-meta">soulintension &middot; September 2026</div>
+      <div class="post-body">
+      <p>Your child has come out to you, as gay, lesbian, bisexual, transgender, or still figuring out how to describe what they're experiencing. Maybe that conversation happened yesterday. Maybe it happened weeks ago and you've been sitting with it since. Either way, here's the most important thing: how you respond from here matters more than having your theology fully sorted out. You don't need a finished position on Scripture and sexuality, or on gender, to move forward well. You need to not lose your relationship with your child while you work the rest of it out.</p>
+      <p>What that looks like depends partly on how that first conversation actually went, so start with whichever of the next two sections fits you.</p>
+      <h2>If that first conversation didn't go the way you wish it had</h2>
+      <p>A lot of parents react badly in the moment, not because they don't love their child, but because they're caught off guard and fall back on fear, a Bible verse, or a flat no before they've had any time to think. If that was you, here's the good news: it's not too late, and going back to have a second, better conversation is one of the most meaningful things you can do.</p>
+      <p>Don't wait for it to come up naturally. Go to your child and say it directly. Something like, "I've had time to think about how I reacted, and I don't think I responded the way I wanted to. You matter more to me than my reaction that day showed, and I want to try again," does real work. Own the reaction specifically rather than offering a vague apology. Don't attach a but to it. "I'm sorry, but I was just shocked" undoes most of the apology. A clean acknowledgment, without a justification tacked on, is what rebuilds trust.</p>
+      <h2>If that first conversation went okay, or well enough</h2>
+      <p>If you managed to stay calm, affirm your love, and not say anything you're now regretting, that's genuinely significant, and it's worth knowing you did something a lot of parents in your position don't manage. The work now isn't a repair conversation. It's making sure that first response wasn't a one-time performance under pressure.</p>
+      <p>That means continuing to show up in small, ordinary ways: asking how they're doing without turning every conversation into a referendum on the big topic, including them normally in family life, not treating the subject as something to whisper about or avoid. Consistency over time is what convinces a child they're safe, more than any single conversation can on its own.</p>
+      <h2>You don't have to have this all figured out today</h2>
+      <p>If you're holding a traditional view of sexuality and marriage, you don't have to abandon that conviction to love your child well, and you don't have to pretend you've already resolved every question in order to move forward. Those are two different pressures, and a lot of parents feel like they have to choose one or the other immediately. You don't.</p>
+      <p>What you do have to figure out, and this can happen over weeks and months, is how to hold your convictions in a way that doesn't require your child to be excluded, managed, or treated as a project in order for you to keep loving them. Plenty of parents land somewhere similar to what's often called a Side B position, holding a traditional view of sexual ethics while fully affirming their child's belonging and dignity without any asterisk. That's not the only place parents land, but it's worth knowing it's an actual, thought-through option, not just a choice between full agreement and full rejection.</p>
+      <p>If your child has come out as transgender or is questioning their gender rather than, or in addition to, their sexual orientation, the theological and practical questions ahead of you are genuinely different from the ones above, and we're not going to pretend otherwise or collapse them into the same framework. What doesn't change is the starting point: your child's dignity isn't contingent on how those questions eventually get answered. Give yourself permission to hold that certainty now, even while the harder questions about names, language, and medical decisions may still be ahead of you and still being worked through carefully and thoughtfully.</p>
+      <h2>Mistakes worth watching for as this continues</h2>
+      <p>A few patterns show up often enough, in the days and months after coming out, not just in the first conversation, that are worth naming directly.</p>
+      <p>Bringing in other family members or your pastor before your child is ready is one of the most common. Your child told you something vulnerable, and it's not automatically yours to share further. Ask them who else knows and who they want to know, and follow their lead unless there's a real safety reason not to.</p>
+      <p>Treating this as something to fix is another. Your child's orientation or gender identity isn't a symptom of something that went wrong in their childhood or your parenting, and searching for a cause, whether that's a friend group, a media influence, or something you did, usually communicates that you're looking for a way to reverse something rather than trying to understand them.</p>
+      <p>Going quiet is a subtler version of the same mistake, and it can happen weeks or months in just as easily as in the first days. If you don't know what to say, saying that directly, "I'm still working through some of this, but I love you and I'm not going anywhere," does more good than letting the subject drop out of conversation entirely.</p>
+      <h2>What comes next</h2>
+      <p>Over time, this usually becomes less of a single crisis to manage and more of an ongoing relationship to keep tending, the same as any other part of parenting an adult or nearly adult child. If your child came out regarding their sexual orientation, that means real conversations, sometimes hard ones, about where you land theologically and what that means for how you'll relate to each other, especially if your child eventually enters a relationship. If your child is transgender or questioning their gender, the next conversations will likely look different, touching on names, pronouns, and medical decisions rather than relationships, and those questions deserve their own careful thought rather than answers borrowed from this post. Either way, it's worth having those conversations honestly rather than avoiding them indefinitely, but they don't all need to happen immediately.</p>
+      <p>If you want to think through the theological questions more carefully, that's a real and worthwhile next step, separate from the immediate work of repairing or reinforcing the relationship. Start with understanding what a traditional sexual ethic looks like when it's held alongside full welcome and dignity, rather than assuming the only options are affirming everything or rejecting your child.</p>
+      <p>You're not the only parent going through this, and you don't have to figure it out alone. If you want to talk to someone who's walked this road, from either side of it, that's exactly the kind of conversation soulintension exists to have.</p>
+      <h2>A resource worth knowing about</h2>
+      <p>If you want something more structured than an article, Parenting LGBTQ Kids is an eleven-part video course from The Center for Faith, Sexuality &amp; Gender, taught by Dr. Preston Sprinkle and built specifically for parents in your position. Many churches also use this same course as the curriculum for their own in-person or virtual parent cohorts, so it's worth asking around locally, including with us, to see whether a cohort using this material is already meeting near you. You can find the course here: <a href="https://ondemand.centerforfaith.com/courses/parenting-lgbtq-kids" target="_blank" rel="noopener">ondemand.centerforfaith.com/courses/parenting-lgbtq-kids</a>.</p>
       </div>
     </div>
-  </section>
+  </article>
 
   <!-- FOOTER CTA -->
   <div class="footer-cta">
-    <span class="section-label">reading only goes so far</span>
-    <h2>want to talk it<br />through in person?</h2>
-    <p>If something here resonates, there's a real community and a real conversation waiting, not from a distance.</p>
-    <a href="/connect" class="btn btn-outline">get in touch</a>
+    <span class="section-label">walking this with your family?</span>
+    <h2>let's talk it<br />through together.</h2>
+    <p>Whether you're the parent working through this or the child who just came out, that's exactly the conversation soulintension exists to have.</p>
+    <a href="/connect" class="btn btn-outline">start a conversation</a>
   </div>
 
   <footer role="contentinfo" aria-label="Site footer">
