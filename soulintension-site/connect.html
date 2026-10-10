@@ -364,6 +364,35 @@
       cursor: pointer;
     }
 
+
+    /* AGE CONFIRMATION */
+    .age-confirm { margin: 0.25rem 0 1.5rem; }
+    .age-confirm-label { display: flex; align-items: flex-start; gap: 0.7rem; cursor: pointer; font-size: 0.95rem; color: var(--heading); line-height: 1.5; }
+    .age-confirm-label input { flex: 0 0 auto; width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; accent-color: var(--brand); cursor: pointer; }
+    .age-confirm-note { font-size: 0.85rem; color: var(--light-text, #999); line-height: 1.6; margin: 0.5rem 0 0 1.8rem; }
+
+    .age-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+    .age-modal[hidden] { display: none; }
+    .age-modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.55); }
+    .age-modal-box { position: relative; background: var(--white); max-width: 520px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2.5rem 2.25rem 2.25rem; outline: none; }
+    .age-modal-x { position: absolute; top: 0.6rem; right: 0.9rem; background: none; border: none; font-size: 1.8rem; line-height: 1; color: var(--light-text, #999); cursor: pointer; padding: 0.25rem 0.5rem; }
+    .age-modal-x:hover { color: var(--heading); }
+    .age-modal-box h2 { font-size: 1.5rem; font-weight: 600; color: var(--heading); line-height: 1.25; letter-spacing: -0.01em; margin-bottom: 1rem; }
+    .age-modal-box p { font-size: 0.98rem; color: var(--body); line-height: 1.75; margin-bottom: 1rem; }
+    .age-modal-box p a { color: var(--brand); }
+    .age-modal-box .age-modal-crisis { font-size: 0.85rem; color: var(--light-text, #999); border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 1.25rem; }
+    .age-modal-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+    .age-modal-actions .btn-ghost { background: var(--white); color: var(--heading); border: 1.5px solid var(--heading); }
+    .age-modal-actions .btn-ghost:hover { background: var(--heading); color: var(--white); }
+    .age-modal-actions .btn-filled { color: var(--white); }
+
+    @media (max-width: 540px) {
+      .age-modal { padding: 1rem; }
+      .age-modal-box { padding: 2rem 1.5rem 1.5rem; }
+      .age-modal-box h2 { font-size: 1.3rem; }
+      .age-modal-box p { font-size: 0.92rem; line-height: 1.65; }
+    }
+
     /* BUTTONS */
     .btn {
       font-family: var(--sans);
@@ -814,11 +843,71 @@
           <textarea id="message" name="message" placeholder="Share as much or as little as you like."></textarea>
         </div>
 
+        <div class="age-confirm">
+          <label class="age-confirm-label" for="age-confirm">
+            <input type="checkbox" id="age-confirm" name="age-confirmed" value="yes" />
+            <span>I confirm that I am at least 18 years old.</span>
+          </label>
+          <p class="age-confirm-note">This form is for adults 18 and older.</p>
+        </div>
+
         <button type="submit" class="btn btn-filled" aria-label="Send message">send message</button>
       </form>
 
     </div>
   </div>
+
+
+  <!-- AGE CONFIRMATION MODAL -->
+  <div class="age-modal" id="age-modal" role="dialog" aria-modal="true" aria-labelledby="age-modal-title" hidden>
+    <div class="age-modal-backdrop" data-close></div>
+    <div class="age-modal-box" tabindex="-1">
+      <button type="button" class="age-modal-x" aria-label="Close" data-close>&times;</button>
+      <h2 id="age-modal-title">One quick thing before you send</h2>
+      <p>This site and this form are for adults 18 and older, so I can't receive your message without that confirmation. If you're 18 or older and just missed the box, close this window, check it, and send your message again. You can also look through the <a href="/resources">Resources page</a>, <a href="/faq">FAQ</a>, and <a href="/blog">blog</a> for more on what soulintension offers and where to find other support.</p>
+      <p class="age-modal-crisis">If you or someone you know is in crisis, call or text 988, or reach The Trevor Project at 1-866-488-7386 or by texting START to 678-678.</p>
+      <div class="age-modal-actions">
+        <a href="/resources" class="btn btn-filled">explore resources</a>
+        <button type="button" class="btn btn-ghost" data-close>back to the form</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.querySelector('form[name="connect"]');
+      var box = document.getElementById('age-confirm');
+      var modal = document.getElementById('age-modal');
+      if (!form || !box || !modal) return;
+      var dialog = modal.querySelector('.age-modal-box');
+      function open() {
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        dialog.focus();
+      }
+      function close() {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        box.focus();
+      }
+      form.addEventListener('submit', function (e) {
+        if (!box.checked) { e.preventDefault(); open(); }
+      });
+      modal.addEventListener('click', function (e) {
+        if (e.target.closest('[data-close]')) close();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (modal.hidden) return;
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key === 'Tab') {
+          var f = modal.querySelectorAll('a[href], button');
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && (document.activeElement === first || document.activeElement === dialog)) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+    })();
+  </script>
 
   <footer role="contentinfo" aria-label="Site footer">
     <a href="/" class="footer-logo">soulintension</a>
