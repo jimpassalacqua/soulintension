@@ -5,7 +5,7 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.soulintension.com/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://www.soulintension.com/blog</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -54,6 +54,12 @@
   <url>
     <loc>https://www.soulintension.com/blog/you-grew-up-in-church-and-left</loc>
     <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.soulintension.com/blog/how-to-love-a-gay-friend-well</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
